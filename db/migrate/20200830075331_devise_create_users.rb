@@ -14,6 +14,32 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       ## Rememberable
       t.datetime :remember_created_at
 
+      ##Employees
+      t.boolean :admin, default: false
+      t.string :name
+      t.string :furigana
+      t.string :address
+      t.string :phone
+      t.string :role
+      t.integer :level_employee
+      t.string :job_exp
+      t.string :pay_number
+      t.date :started_date
+      t.boolean :licence1, default: false
+      t.boolean :licence2, default: false
+      t.boolean :licence3, default: false
+      t.boolean :licence4, default: false
+      t.boolean :licence5, default: false
+      t.date :healthy_exam
+      t.date :drive_licence
+      t.string :document
+      t.date :document_date
+      t.string :passport
+      t.date :passport_date
+      t.boolean :active
+      t.boolean :weekend, default: false
+      t.boolean :night_shift, default: false
+
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
       # t.datetime :current_sign_in_at
