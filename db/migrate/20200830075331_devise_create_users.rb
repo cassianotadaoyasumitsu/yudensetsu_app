@@ -36,7 +36,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.date :document_date
       t.string :passport
       t.date :passport_date
-      t.boolean :active
+      t.boolean :active, default: true
       t.boolean :weekend, default: false
       t.boolean :night_shift, default: false
 

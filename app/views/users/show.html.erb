@@ -4,16 +4,49 @@
 <div class="d-flex flex-column align-items-center">
   <%= link_to 'Voltar', users_path, class: ' btn btn-info btn-sm' %>
 </div>
-<div class="m-5 p-5 border">
-  <p>Name: <%= @user.name %></p>
-  <p>Furigana: <%= @user.furigana %> </p>
+<div class="employee-view">
+  <div class="row justify-content-around align-items-center">
+    <p>Name: <%= @user.name %></p>
+    <p>Furigana: <%= @user.furigana %> </p>
+    <% @user.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 200, width: 150, crop: :fill %>
+    <% end %>
+  </div>
   <p>Address: <%= @user.address %> </p>
-  <p>Phone: <%= @user.phone %></p>
-  <p>Email: <%= @user.email %></p>
-  <p>Role: <%= @user.role %> </p>
-  <p>Level: <%= @user.level_employee %> </p>
-  <p>Started at: <%= @user.started_date %> </p>
-  <p>Job Exp: <%= @user.job_exp %> </p>
-
-  <p>Active User: <%= @user.active ? 'Yes' : 'No' %></p>
+  <div class="row justify-content-around">
+    <p>Pay Number: <%= @user.pay_number %> </p>
+    <p>Phone: <%= @user.phone %></p>
+    <p>Email: <%= @user.email %></p>
+  </div>
+  <div class="row justify-content-around">
+    <p>Role: <%= @user.role %> </p>
+    <p>Level: <%= @user.level_employee %> </p>
+    <p>Started at: <%= @user.started_date %> </p>
+    <p>Job Exp: <%= @user.job_exp %> </p>
+  </div>
+  <div class="row justify-content-around">
+    <p>Licence?: <%= @user.licence1 %> </p>
+    <p>Licence?: <%= @user.licence2 %> </p>
+    <p>Licence?: <%= @user.licence3 %> </p>
+    <p>Licence?: <%= @user.licence4 %> </p>
+  </div>
+  <div class="row justify-content-around">
+    <p>Driver Licence: <%= @user.licence5 %> </p>
+    <p>Driver Licence Venc.: <%= @user.drive_licence %> </p>
+  </div>
+  <p>Exame Médico: <%= @user.healthy_exam %> </p>
+  <div class="row justify-content-around">
+    <p>Zairyo Card: <%= @user.document %> </p>
+    <p>Vencimento: <%= @user.document_date %> </p>
+  </div>
+  <div class="row justify-content-around">
+    <p>Passaport: <%= @user.passport %> </p>
+    <p>Vencimento: <%= @user.passport_date %> </p>
+  </div>
+  <div class="row justify-content-around">
+    <p>Final de semana: <%= @user.weekend ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %> </p>
+    <p>Noturno: <%= @user.night_shift ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %> </p>
+    <p>Active User: <%= @user.active ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %></p>
+  </div>
+  <p>Password: <%= @user.password %> </p>
 </div>
