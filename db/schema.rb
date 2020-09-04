@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2020_08_30_080924) do
     t.date "document_date"
     t.string "passport"
     t.date "passport_date"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.boolean "weekend", default: false
     t.boolean "night_shift", default: false
     t.datetime "created_at", precision: 6, null: false
