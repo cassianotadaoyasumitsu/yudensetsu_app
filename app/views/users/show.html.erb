@@ -5,48 +5,55 @@
   <%= link_to 'Voltar', users_path, class: ' btn btn-info btn-sm' %>
 </div>
 <div class="employee-view">
-  <div class="row justify-content-around align-items-center">
+  <div class="user-name lead">
     <p>Name: <%= @user.name %></p>
     <p>Furigana: <%= @user.furigana %> </p>
-    <% @user.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 200, width: 150, crop: :fill %>
-    <% end %>
+    <p><% @user.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 150, width: 100, crop: :fill %>
+      <% end %>
+    </p>
   </div>
-  <p>Address: <%= @user.address %> </p>
-  <div class="row justify-content-around">
-    <p>Pay Number: <%= @user.pay_number %> </p>
-    <p>Phone: <%= @user.phone %></p>
-    <p>Email: <%= @user.email %></p>
+  <div class="user-address">
+    <p>Address: <%= @user.address %> </p>
   </div>
-  <div class="row justify-content-around">
-    <p>Role: <%= @user.role %> </p>
-    <p>Level: <%= @user.level_employee %> </p>
-    <p>Started at: <%= @user.started_date %> </p>
-    <p>Job Exp: <%= @user.job_exp %> </p>
+  <div class="user">
+    <p>Pay Number: <span><%= @user.pay_number %></span>  </p>
+    <p>Phone: <span><%= @user.phone %></span></p>
+    <p>Email: <span><%= @user.email %></span></p>
   </div>
-  <div class="row justify-content-around">
-    <p>Licence?: <%= @user.licence1 %> </p>
-    <p>Licence?: <%= @user.licence2 %> </p>
-    <p>Licence?: <%= @user.licence3 %> </p>
-    <p>Licence?: <%= @user.licence4 %> </p>
+  <div class="user">
+    <p>Role: <span><%= @user.role %></span> </p>
+    <p>Level: <span><%= @user.level_employee %></span> </p>
+    <p>Started at: <span><%= @user.started_date %></span> </p>
+    <p>Job Exp: <span><%= @user.job_exp %></span> </p>
   </div>
-  <div class="row justify-content-around">
+  <div class="user">
+    <p>Licence?: <%= @user.licence1  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %> </p>
+    <p>Licence?: <%= @user.licence2  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %> </p>
+    <p>Licence?: <%= @user.licence3  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %> </p>
+    <p>Licence?: <%= @user.licence4  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %> </p>
+  </div>
+  <div class="user">
     <p>Driver Licence: <%= @user.licence5 %> </p>
     <p>Driver Licence Venc.: <%= @user.drive_licence %> </p>
   </div>
-  <p>Exame Médico: <%= @user.healthy_exam %> </p>
-  <div class="row justify-content-around">
+  <div class="user">
+    <p>Exame Médico: <%= @user.healthy_exam %> </p>
+  </div>
+  <div class="user">
     <p>Zairyo Card: <%= @user.document %> </p>
     <p>Vencimento: <%= @user.document_date %> </p>
   </div>
-  <div class="row justify-content-around">
+  <div class="user">
     <p>Passaport: <%= @user.passport %> </p>
     <p>Vencimento: <%= @user.passport_date %> </p>
   </div>
-  <div class="row justify-content-around">
+  <div class="user">
     <p>Final de semana: <%= @user.weekend ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %> </p>
     <p>Noturno: <%= @user.night_shift ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %> </p>
     <p>Active User: <%= @user.active ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %></p>
   </div>
-  <p>Password: <%= @user.password %> </p>
+  <div class="user">
+    <p>Password: <%= @user.password %> </p>
+  </div>
 </div>
