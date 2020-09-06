@@ -6,8 +6,8 @@
 </div>
 <div class="employee-view">
   <div class="user-name lead">
-    <p>Name: <%= @user.name %></p>
-    <p>Furigana: <%= @user.furigana %> </p>
+    <p><%= @user.name %></p>
+    <p><%= @user.furigana %> </p>
     <p><% @user.photos.each do |photo| %>
       <%= cl_image_tag photo.key, height: 150, width: 100, crop: :fill %>
       <% end %>
@@ -28,32 +28,32 @@
     <p>Job Exp: <span><%= @user.job_exp %></span> </p>
   </div>
   <div class="user">
-    <p>Licence?: <%= @user.licence1  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %> </p>
-    <p>Licence?: <%= @user.licence2  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %> </p>
-    <p>Licence?: <%= @user.licence3  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %> </p>
-    <p>Licence?: <%= @user.licence4  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %> </p>
+    <p>Licence?: <span><%= @user.licence1  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
+    <p>Licence?: <span><%= @user.licence2  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
+    <p>Licence?: <span><%= @user.licence3  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
+    <p>Licence?: <span><%= @user.licence4  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
   </div>
   <div class="user">
-    <p>Driver Licence: <%= @user.licence5 %> </p>
-    <p>Driver Licence Venc.: <%= @user.drive_licence %> </p>
+    <p>Driver Licence: <span><%= @user.licence5 %></span> </p>
+    <p>Driver Licence Venc.: <span><%= @user.drive_licence %></span> </p>
   </div>
   <div class="user">
-    <p>Exame Médico: <%= @user.healthy_exam %> </p>
+    <p>Exame Médico: <span><%= @user.healthy_exam %></span> </p>
   </div>
   <div class="user">
-    <p>Zairyo Card: <%= @user.document %> </p>
-    <p>Vencimento: <%= @user.document_date %> </p>
+    <p>Zairyo Card: <span><%= @user.document %></span> </p>
+    <p>Vencimento: <span><%= @user.document_date %></span> </p>
   </div>
   <div class="user">
-    <p>Passaport: <%= @user.passport %> </p>
-    <p>Vencimento: <%= @user.passport_date %> </p>
+    <p>Passaport: <span><%= @user.passport %></span> </p>
+    <p>Vencimento: <span><%= @user.passport_date %></span> </p>
   </div>
   <div class="user">
-    <p>Final de semana: <%= @user.weekend ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %> </p>
-    <p>Noturno: <%= @user.night_shift ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %> </p>
-    <p>Active User: <%= @user.active ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %></p>
+    <p>Final de semana: <span><%= @user.weekend ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %></span> </p>
+    <p>Noturno: <span><%= @user.night_shift ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %></span> </p>
+    <p>Active User: <span><%= @user.active ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %></span> </p>
   </div>
   <div class="user">
-    <p>Password: <%= @user.password %> </p>
+    <p>Password: <span><%= @user.password %></span> </p>
   </div>
 </div>
