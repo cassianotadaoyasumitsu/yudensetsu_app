@@ -1,0 +1,25 @@
+<div class="container d-flex flex-column mt-5 align-items-center">
+<%= link_to 'Voltar', root_path, class: 'btn btn-info btn-sm m-2' %>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">id</th>
+
+      <th scope="col">In</th>
+      <th scope="col">Out</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+<% current_user.puntos.each do |punto| %>
+
+  <tbody>
+    <tr>
+      <th scope="row"><%= current_user.id %></th>
+      <td><%= punto.in.strftime("%k:%M") %></td>
+      <td><%= punto.out.strftime("%k:%M") %></td>
+      <td><%= punto.user.email %></td>
+    </tr>
+  </tbody>
+<% end %>
+</table>
+</div>

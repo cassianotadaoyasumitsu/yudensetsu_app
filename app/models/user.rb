@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many_attached :photos
+  has_many :puntos, dependent: :destroy
   ROLES = %w(Denkiya Shokucho)
 
   validates :name, presence: true
