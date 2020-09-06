@@ -27,7 +27,11 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to users_path
+      if @user.admin
+        redirect_to user_path(params[:id])
+      else
+        redirect_to root_path
+      end
     else
       render :edit
     end
@@ -49,6 +53,6 @@ class UsersController < ApplicationController
       :licence4, :licence5, :level_employee, :healthy_exam,
       :document, :document_date, :passport, :passport_date,
       :active, :weekend, :night_shift, photos: []
-    )
+      )
   end
 end
