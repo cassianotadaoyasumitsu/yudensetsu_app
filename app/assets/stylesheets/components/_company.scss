@@ -1,4 +1,4 @@
-.employee-view {
+.company-view {
   background-color: white;
   margin: 24px;
   padding: 24px;
@@ -10,9 +10,9 @@
   }
 }
 
-.user-name {
+.company-name {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   border: 1px solid lightgrey;
   border-radius: 4px;
@@ -25,7 +25,7 @@
   }
 }
 
-.user {
+.company {
   display: flex;
   justify-content: space-between;
 
@@ -43,4 +43,3 @@
     }
   }
 }
-

@@ -1,8 +1,10 @@
 <%= simple_form_for [company, genba] do |f| %>
+<div class="forms">
 <%= f.input :name %>
 <%= f.input :address %>
 <%= f.input :phone %>
 <%= f.input :contact %>
 <%= f.input :closure %>
-<%= f.submit class: 'bnt btn-outline-info' %>
+<%= f.submit class: 'bnt btn-primary w-100' %>
 <% end %>
+</div>

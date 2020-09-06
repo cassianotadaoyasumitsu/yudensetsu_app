@@ -1,7 +1,10 @@
-<div class="container">
-<h1 class="mb-5 text-center">Registro de Nova Empresa</h1>
+<div class="row justify-content-center">
+  <%= image_tag "logo.png", class: "p-5" %>
+</div>
+<div class="d-flex flex-column align-items-center">
+  <%= link_to 'Voltar', companies_path, class: ' btn btn-info btn-sm' %>
+</div>
 
 <%= render 'companies/form', company: @company %>
 
-<%= link_to 'Inicio', companies_path, class: 'btn btn-outline-success w-100' %>
-</div>
+
