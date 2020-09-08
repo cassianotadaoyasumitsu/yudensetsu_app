@@ -5,19 +5,18 @@
     <tr>
       <th scope="col">id</th>
 
+      <th scope="col">Company</th>
       <th scope="col">In</th>
       <th scope="col">Out</th>
-      <th scope="col">Email</th>
     </tr>
   </thead>
 <% current_user.puntos.each do |punto| %>
-
   <tbody>
     <tr>
       <th scope="row"><%= current_user.id %></th>
-      <td><%= punto.in.strftime("%k:%M") %></td>
+      <td><%= punto.company.name %></td>
+      <td><%= punto.in %></td>
       <td><%= punto.out.strftime("%k:%M") %></td>
-      <td><%= punto.user.email %></td>
     </tr>
   </tbody>
 <% end %>
