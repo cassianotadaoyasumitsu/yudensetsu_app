@@ -4,19 +4,28 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">id</th>
-
+      <th scope="col">Turn</th>
       <th scope="col">Company</th>
       <th scope="col">In</th>
       <th scope="col">Out</th>
+      <th scope="col">Note</th>
     </tr>
   </thead>
 <% current_user.puntos.each do |punto| %>
   <tbody>
     <tr>
       <th scope="row"><%= current_user.id %></th>
+      <% if punto.day %>
+      <td>🌞</td>
+      <% elsif punto.night %>
+      <td>🌚</td>
+      <% else %>
+      <td></td>
+      <% end %>
       <td><%= punto.company.name %></td>
-      <td><%= punto.in %></td>
+      <td><%= punto.in.strftime("%k:%M") %></td>
       <td><%= punto.out.strftime("%k:%M") %></td>
+      <td><%= punto.note %></td>
     </tr>
   </tbody>
 <% end %>
