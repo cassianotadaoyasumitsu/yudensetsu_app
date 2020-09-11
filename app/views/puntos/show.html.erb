@@ -4,6 +4,7 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">id</th>
+      <th scope="col">Date</th>
       <th scope="col">Turn</th>
       <th scope="col">Company</th>
       <th scope="col">In</th>
@@ -15,6 +16,7 @@
   <tbody>
     <tr>
       <th scope="row"><%= current_user.id %></th>
+      <td><%= punto.in.strftime("%d/%m/%Y") %></td>
       <% if punto.day %>
       <td>🌞</td>
       <% elsif punto.night %>
