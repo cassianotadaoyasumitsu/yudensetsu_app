@@ -10,8 +10,10 @@ User.destroy_all
 puts 'Creating Admin Master'
 
 params = {}
-params[:name] = 'Cassiano'
+params[:name] = 'Cassiano Tadao Yasumitsu'
+params[:furigana] = 'ヤスミツ　カシアノ　タダオ'
 params[:address] = 'Tsurumi'
+params[:pay_number] = '001'
 params[:phone] = '07040670084'
 params[:email] = 'admin@yasumitsu.io'
 params[:role] = 'Denkiya'
