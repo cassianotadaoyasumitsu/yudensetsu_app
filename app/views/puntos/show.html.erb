@@ -9,6 +9,7 @@
       <th scope="col">Company</th>
       <th scope="col">In</th>
       <th scope="col">Out</th>
+      <th scope="col">Extra</th>
       <th scope="col">Note</th>
     </tr>
   </thead>
@@ -27,6 +28,8 @@
       <td><%= punto.company.name %></td>
       <td><%= punto.in.strftime("%k:%M") %></td>
       <td><%= punto.out.strftime("%k:%M") %></td>
+      <% time_diff = (punto.out - punto.in) %>
+      <td><%= (time_diff / 1.hour).round %></td>
       <td><%= punto.note %></td>
     </tr>
   </tbody>

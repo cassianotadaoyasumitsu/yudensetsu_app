@@ -1,7 +1,4 @@
 <%= simple_form_for (punto) do |f| %>
-<div class="row justify-content-center">
-  <%= image_tag "logo.png", class: "p-5" %>
-</div>
 <div class="user-view">
   <div class="row justify-content-around user">
     <%= f.input :day %>
@@ -14,7 +11,7 @@
   <% if punto.in && punto.company %>
   <%= f.input :out, as: :time, html5: true, input_html: { value: Time.now.strftime("%k:%M") } %>
   <%= f.input :note %>
-  <%= f.submit "Check Out" %>
+  <%= f.submit "Check Out", class: 'btn btn-primary btn-sm w-100' %>
   <% else %>
   <%= f.input :in, as: :time, html5: true, input_html: { value: Time.now.strftime("%k:%M") } %>
   <%= f.input :note, as: :hidden %>
