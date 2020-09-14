@@ -29,7 +29,11 @@
       <td><%= punto.in.strftime("%k:%M") %></td>
       <td><%= punto.out.strftime("%k:%M") %></td>
       <% time_diff = (punto.out - punto.in) %>
-      <td><%= (time_diff / 1.hour).round %></td>
+      <% if (time_diff / 1.hour).round <= 9 %>
+      <td>0</td>
+      <% else %>
+      <td><%= ((time_diff / 1.hour).round - 9) %></td>
+      <% end %>
       <td><%= punto.note %></td>
     </tr>
   </tbody>
