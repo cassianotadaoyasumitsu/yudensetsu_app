@@ -9,7 +9,7 @@
   <%= f.input :fax%>
   <%= f.input :contact %>
   <%= f.input :email %>
-  <%= f.input :closure%>
+  <%= f.input :closure, collection: 1..31 %>
   <%= f.submit company.persisted? ? 'Editar' : 'Criar', class: 'btn btn-primary w-100' %>
 </div>
 <% end %>

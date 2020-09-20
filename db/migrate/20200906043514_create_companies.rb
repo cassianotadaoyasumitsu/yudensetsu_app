@@ -10,7 +10,7 @@ class CreateCompanies < ActiveRecord::Migration[6.0]
       t.string :fax
       t.string :email
       t.string :contact
-      t.date :closure
+      t.string :closure
       t.timestamps
     end
   end
