@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_09_06_115200) do
     t.string "fax"
     t.string "email"
     t.string "contact"
-    t.date "closure"
+    t.string "closure"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 2020_09_06_115200) do
   end
 
   create_table "puntos", force: :cascade do |t|
-    t.datetime "in"
-    t.datetime "out"
+    t.time "in"
+    t.time "out"
     t.text "note"
     t.boolean "day"
     t.boolean "night"
