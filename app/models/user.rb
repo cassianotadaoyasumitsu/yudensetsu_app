@@ -16,4 +16,11 @@ class User < ApplicationRecord
   validates :level_employee, inclusion: { in: 0..5 }
   validates :level_employee, numericality: { only_integer: true }
   validates :started_date, presence: true
+
+  include PgSearch::Model
+    pg_search_scope :search_by_name,
+    against: [ :name ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
