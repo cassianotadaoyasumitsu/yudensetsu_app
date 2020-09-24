@@ -2,7 +2,7 @@
 <% if current_user.admin %>
 <div class="forms">
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <p><%= f.input :name, label: '氏名 (Nome Completo):' %></p>
+  <p><%= f.input :name, label: '氏名 (Full Name):' %></p>
   <p><%= f.input :furigana %></p>
   <%= f.input :address %>
   <p><%= f.input :phone %></p>
@@ -24,12 +24,12 @@
   <%= f.input :drive_licence %>
   <%= f.input :healthy_exam %>
   <%= f.input :document, label: 'Zairyo Card'  %>
-  <%= f.input :document_date, label: 'Vencimento' %>
+  <%= f.input :document_date, label: 'Expire' %>
   <%= f.input :passport %>
-  <%= f.input :passport_date, label: 'Vencimento' %>
+  <%= f.input :passport_date, label: 'Expire' %>
   <%= f.input :active %>
   <%= f.input :admin %>
-  <%= f.submit @user.persisted? ? 'Editar' : 'Criar', class: 'btn btn-primary btn-sm w-100' %>
+  <%= f.submit @user.persisted? ? 'Edit' : 'Create', class: 'btn btn-primary btn-sm w-100' %>
 </div>
 <% else %>
 <div class="forms">
@@ -39,7 +39,7 @@
       <%= f.input :night_shift %>
     </div>
   </div>
-  <%= f.submit @user.persisted? ? 'Editar' : 'Criar', class: 'btn btn-primary btn-sm w-100' %>
+  <%= f.submit @user.persisted? ? 'Edit' : 'Create', class: 'btn btn-primary btn-sm w-100' %>
 </div>
 <% end %>
 <% end %>

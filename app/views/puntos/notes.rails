@@ -1,1 +1,0 @@
-<%= f.input :company_id, collection: Company.all %>

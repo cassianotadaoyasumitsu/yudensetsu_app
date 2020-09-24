@@ -3,11 +3,11 @@
     <%= image_tag "logo.png", alt: "alttext", class: 'p-5' %>
   </div>
   <% if current_user.admin %>
-  <%= link_to 'Funcionários', users_path, class: 'btn btn-primary w-50 mb-3' %>
-  <%= link_to 'Empresas', companies_path, class: 'btn btn-success w-50 mb-3' %>
-  <%= link_to 'Ponto', new_punto_path, class: 'btn btn-info w-50 mb-3' %>
+  <%= link_to 'Employees', users_path, class: 'btn btn-primary w-50 mb-3' %>
+  <%= link_to 'Companies', companies_path, class: 'btn btn-success w-50 mb-3' %>
+  <%= link_to 'Time Card', new_punto_path, class: 'btn btn-info w-50 mb-3' %>
   <% else %>
-  <%= link_to 'Ponto', new_punto_path, class: 'btn btn-info w-50 mb-3' %>
-  <%= link_to 'Configurar', edit_user_path(current_user), class: 'btn btn-secondary w-50 mb-3' %>
+  <%= link_to 'Time Card', new_punto_path, class: 'btn btn-info w-50 mb-3' %>
+  <%= link_to 'Configuration', edit_user_path(current_user), class: 'btn btn-secondary w-50 mb-3' %>
   <% end %>
 </div>

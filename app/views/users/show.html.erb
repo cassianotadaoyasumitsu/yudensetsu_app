@@ -2,7 +2,7 @@
   <%= image_tag "logo.png", class: "p-5" %>
 </div>
 <div class="d-flex flex-column align-items-center">
-  <%= link_to 'Voltar', users_path, class: ' btn btn-info btn-sm' %>
+  <%= link_to 'Back', users_path, class: ' btn btn-info btn-sm' %>
 </div>
 <div class="user-view">
   <div class="user-name lead">
@@ -38,22 +38,24 @@
     <p>Driver Licence Venc.: <span><%= @user.drive_licence %></span> </p>
   </div>
   <div class="user">
-    <p>Exame Médico: <span><%= @user.healthy_exam %></span> </p>
+    <p>Health Exam: <span><%= @user.healthy_exam %></span> </p>
   </div>
   <div class="user">
     <p>Zairyo Card: <span><%= @user.document %></span> </p>
-    <p>Vencimento: <span><%= @user.document_date %></span> </p>
+    <p>Expire: <span><%= @user.document_date %></span> </p>
   </div>
   <div class="user">
     <p>Passaport: <span><%= @user.passport %></span> </p>
-    <p>Vencimento: <span><%= @user.passport_date %></span> </p>
+    <p>Expire: <span><%= @user.passport_date %></span> </p>
   </div>
   <div class="user">
-    <p>Final de semana: <span><%= @user.weekend ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %></span> </p>
-    <p>Noturno: <span><%= @user.night_shift ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %></span> </p>
+    <p>Weekend: <span><%= @user.weekend ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %></span> </p>
+    <p>Night Shift: <span><%= @user.night_shift ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %></span> </p>
     <p>Active User: <span><%= @user.active ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %></span> </p>
   </div>
   <div class="user">
     <p>Password: <span><%= @user.password %></span> </p>
   </div>
 </div>
+
+
