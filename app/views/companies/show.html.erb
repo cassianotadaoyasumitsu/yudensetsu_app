@@ -2,7 +2,7 @@
   <%= image_tag "logo.png", class: "p-5" %>
 </div>
 <div class="d-flex flex-column align-items-center">
-  <%= link_to 'Voltar', companies_path, class: ' btn btn-info btn-sm' %>
+  <%= link_to 'Back', companies_path, class: ' btn btn-info btn-sm' %>
 </div>
 <div class="company-view">
   <div class="company-name lead">
@@ -11,31 +11,31 @@
   </div>
 
 <div class="company">
-  <p>Dono: <span><%= @company.ceo %></span></p>
+  <p>Owner: <span><%= @company.ceo %></span></p>
   </div>
   <div class="company">
-  <p>Endereço: <span><%= @company.address %></span></p>
+  <p>Address: <span><%= @company.address %></span></p>
   </div>
   <div class="company">
-  <p>Endereço: <span><%= @company.address2 %></span></p>
+  <p>Address: <span><%= @company.address2 %></span></p>
   </div>
   <div class="company">
-  <p>Contato: <span><%= @company.contact %></span></p>
-  <p>Telefone: <span><%= @company.phone %></span></p>
+  <p>Contact: <span><%= @company.contact %></span></p>
+  <p>Phone: <span><%= @company.phone %></span></p>
   </div>
   <div class="company">
   <p>Fax: <span><%= @company.fax %></span></p>
   <p>Email: <span><%= @company.email %></span></p>
   </div>
   <div class="company">
-  <p>Fechamento: <span><%= @company.closure %></span></p>
+  <p>Closure: <span><%= @company.closure %></span></p>
   </div>
 
 
 
 
   <div class="d-flex flex-column align-items-center">
-    <%= link_to 'Criar novo genba', new_company_genba_path(@company), class: 'btn btn-primary mb-5'  %>
+    <%= link_to 'New Genba', new_company_genba_path(@company), class: 'btn btn-primary mb-5'  %>
   </div>
 
   <div class="row justify-content-around">
