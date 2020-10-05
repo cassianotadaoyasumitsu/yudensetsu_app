@@ -19,9 +19,9 @@
       <th scope="row"><%= current_user.id %></th>
       <td><%= punto.in.strftime("%d/%m/%Y") %></td>
       <% if punto.day %>
-      <td>🌞</td>
+      <td>昼勤</td>
       <% elsif punto.night %>
-      <td>🌚</td>
+      <td>夜勤</td>
       <% else %>
       <td>休み</td>
       <% end %>
