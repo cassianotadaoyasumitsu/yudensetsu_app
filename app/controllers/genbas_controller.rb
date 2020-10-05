@@ -1,6 +1,10 @@
 class GenbasController < ApplicationController
   before_action :find_company, except: [:destroy]
 
+  def index
+    @genba = Company.genbas.all
+  end
+
   def new
     @genba = Genba.new
   end
