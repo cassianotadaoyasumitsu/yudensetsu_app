@@ -16,26 +16,36 @@
   <%= f.input :started_date %>
   <%= f.input :job_exp %>
   <%= f.input :pay_number %>
-  <%= f.input :licence1, as: :boolean %>
-  <%= f.input :licence2, as: :boolean %>
-  <%= f.input :licence3, as: :boolean %>
-  <%= f.input :licence4, as: :boolean %>
-  <%= f.input :licence5, as: :boolean, label: 'Driver Licence:' %>
-  <%= f.input :licence6, as: :boolean %>
-  <%= f.input :licence7, as: :boolean %>
-  <%= f.input :licence8, as: :boolean %>
-  <%= f.input :licence9, as: :boolean %>
-  <%= f.input :licence10, as: :boolean %>
-  <%= f.input :licence11, as: :boolean %>
-  <%= f.input :licence12, as: :boolean %>
-  <%= f.input :licence13, as: :boolean %>
-  <%= f.input :licence14, as: :boolean %>
-  <%= f.input :licence15, as: :boolean %>
-  <%= f.input :licence16, as: :boolean %>
-  <%= f.input :licence17, as: :boolean %>
-  <%= f.input :licence18, as: :boolean %>
-  <%= f.input :licence19, as: :boolean %>
-  <%= f.input :licence20, as: :boolean %>
+  <div class="row justify-content-around">
+    <div>
+      <%= f.input :licence1, as: :boolean %>
+      <%= f.input :licence2, as: :boolean %>
+      <%= f.input :licence3, as: :boolean %>
+      <%= f.input :licence4, as: :boolean %>
+      <%= f.input :licence5, as: :boolean, label: 'Driver Licence:' %>
+    </div>
+    <div>
+      <%= f.input :licence6, as: :boolean %>
+      <%= f.input :licence7, as: :boolean %>
+      <%= f.input :licence8, as: :boolean %>
+      <%= f.input :licence9, as: :boolean %>
+      <%= f.input :licence10, as: :boolean %>
+    </div>
+    <div>
+      <%= f.input :licence11, as: :boolean %>
+      <%= f.input :licence12, as: :boolean %>
+      <%= f.input :licence13, as: :boolean %>
+      <%= f.input :licence14, as: :boolean %>
+      <%= f.input :licence15, as: :boolean %>
+    </div>
+    <div>
+      <%= f.input :licence16, as: :boolean %>
+      <%= f.input :licence17, as: :boolean %>
+      <%= f.input :licence18, as: :boolean %>
+      <%= f.input :licence19, as: :boolean %>
+      <%= f.input :licence20, as: :boolean %>
+    </div>
+  </div>
   <%= f.input :drive_licence %>
   <%= f.input :healthy_exam %>
   <%= f.input :document, label: 'Zairyo Card'  %>
