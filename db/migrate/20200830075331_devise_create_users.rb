@@ -30,6 +30,21 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.boolean :licence3, default: false
       t.boolean :licence4, default: false
       t.boolean :licence5, default: false
+      t.boolean :licence6, default: false
+      t.boolean :licence7, default: false
+      t.boolean :licence8, default: false
+      t.boolean :licence9, default: false
+      t.boolean :licence10, default: false
+      t.boolean :licence11, default: false
+      t.boolean :licence12, default: false
+      t.boolean :licence13, default: false
+      t.boolean :licence14, default: false
+      t.boolean :licence15, default: false
+      t.boolean :licence16, default: false
+      t.boolean :licence17, default: false
+      t.boolean :licence18, default: false
+      t.boolean :licence19, default: false
+      t.boolean :licence20, default: false
       t.date :healthy_exam
       t.date :drive_licence
       t.string :document
