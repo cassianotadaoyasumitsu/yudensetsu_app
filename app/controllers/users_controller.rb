@@ -54,7 +54,10 @@ class UsersController < ApplicationController
       :admin, :name, :furigana, :address, :phone, :password,
       :email, :role, :job_exp, :started_date, :drive_licence,
       :pay_number, :licence1, :licence2, :licence3,
-      :licence4, :licence5, :level_employee, :healthy_exam,
+      :licence4, :licence5, :licence6, :licence7, :licence8,
+      :licence9, :licence10, :licence11, :licence12, :licence13,
+      :licence14, :licence15, :licence16, :licence17, :licence18,
+      :licence19, :licence20, :level_employee, :healthy_exam,
       :document, :document_date, :passport, :passport_date,
       :active, :weekend, :night_shift, photos: []
       )
