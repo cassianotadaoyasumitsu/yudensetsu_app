@@ -6,6 +6,7 @@
       <th scope="col">id</th>
       <th scope="col">Date</th>
       <th scope="col">Turn</th>
+      <th scope="col">Genba</th>
       <th scope="col">Company</th>
       <th scope="col">In</th>
       <th scope="col">Out</th>
@@ -25,7 +26,8 @@
       <% else %>
       <td>休み</td>
       <% end %>
-      <td><%= punto.company.name %></td>
+      <td><%= punto.genba.name %></td>
+      <td><%= punto.genba.company.name %></td>
       <td><%= punto.in.strftime("%k:%M") %></td>
       <td><%= punto.out.strftime("%k:%M") %></td>
       <% time_diff = (punto.out - punto.in) %>

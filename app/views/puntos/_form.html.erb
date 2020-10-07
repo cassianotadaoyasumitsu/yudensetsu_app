@@ -5,10 +5,14 @@
     <%= f.input :night %>
     <%= f.input :day_off %>
   </div>
+  <%= form_with url: new_punto_path do |company_form| %>
+    <%= company_form.select :company, Company.all.map{ |cpy| cpy.name}, prompt: (@current_company.nil? ? 'Select a company' : @current_company.name) %>
+  <% end %>
+  <% unless @current_company.nil? %>
+    <%= f.association :genba, collection: @current_company.genbas %>
+  <% end %>
 
-  <%= f.association :company, collection: Company.all %>
-
-  <% if punto.in && punto.company %>
+  <% if punto.in && punto.genba %>
   <%= f.input :out, as: :time, html5: true, input_html: { value: Time.now.strftime("%k:%M") } %>
   <%= f.input :note %>
   <%= f.submit "Check Out", class: 'btn btn-primary btn-sm w-100' %>

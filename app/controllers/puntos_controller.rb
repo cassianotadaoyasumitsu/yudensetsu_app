@@ -10,6 +10,7 @@ class PuntosController < ApplicationController
   end
 
   def new
+    @current_company = Company.find_by(name: params[:company])
     if !current_user.puntos.last
       @punto = Punto.new
     else
@@ -54,7 +55,7 @@ class PuntosController < ApplicationController
     params.require(:punto).permit(
       :in, :out, :note,
       :day, :night, :day_off,
-      :company_id
+      :genba_id
       )
   end
 end
