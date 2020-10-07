@@ -20,7 +20,7 @@
   <%= link_to 'New Company', new_company_path, class: 'btn btn-primary btn-sm m-2' %>
 </div>
 <ul class="list-group mb-2">
-  <% @companies.order(:name).each do |company| %>
+  <% @companies.each do |company| %>
   <li class="list-group-item">
     <div class="row justify-content-between align-items-center">
       <div>

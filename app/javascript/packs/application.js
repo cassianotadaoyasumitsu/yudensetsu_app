@@ -27,8 +27,12 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { displayGenba } from './display_genba';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  if (document.querySelector("#company")) {
+    displayGenba();
+  }
 });
