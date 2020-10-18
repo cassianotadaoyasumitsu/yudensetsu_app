@@ -1,14 +1,15 @@
 <%= simple_form_for (punto) do |f| %>
 <div class="user-view">
+
+  <%= form_with url: new_punto_path do |company_form| %>
+    <%= company_form.select :company, Company.all.map{ |cpy| cpy.name }, prompt: (@current_company.nil? ? 'Select a company' : @current_company.name) %>
+  <% end %>
+  <p></p>
   <div class="row justify-content-around user">
     <%= f.input :day %>
     <%= f.input :night %>
     <%= f.input :day_off %>
   </div>
-
-  <%= form_with url: new_punto_path do |company_form| %>
-    <%= company_form.select :company, Company.all.map{ |cpy| cpy.name }, prompt: (@current_company.nil? ? 'Select a company' : @current_company.name) %>
-  <% end %>
 
   <% unless @current_company.nil? %>
     <%= f.association :genba, label: 'Genbas', collection: @current_company.genbas %>
