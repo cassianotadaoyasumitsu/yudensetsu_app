@@ -12,6 +12,7 @@
       <th scope="col">Out</th>
       <th scope="col">Extra</th>
       <th scope="col">Note</th>
+      <th scope="col">Edit</th>
     </tr>
   </thead>
 <% current_user.puntos.each do |punto| %>
@@ -19,9 +20,9 @@
     <tr>
       <th scope="row"><%= current_user.id %></th>
       <td><%= punto.in.strftime("%d/%m/%Y") %></td>
-      <% if punto.day %>
+      <% if punto.day == true %>
       <td>昼勤</td>
-      <% elsif punto.night %>
+      <% elsif punto.night == true %>
       <td>夜勤</td>
       <% else %>
       <td>休み</td>
@@ -37,6 +38,7 @@
       <td><%= ((time_diff / 1.hour).round - 9) %></td>
       <% end %>
       <td><%= punto.note %></td>
+      <td><%= link_to 'Edit', edit_punto_path(punto), class: 'btn btn-secondary btn-sm' %></td>
     </tr>
   </tbody>
 <% end %>
