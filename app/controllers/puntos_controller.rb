@@ -33,6 +33,7 @@ class PuntosController < ApplicationController
   end
 
   def edit
+    @punto = Punto.find(params[:id])
   end
 
   def update
