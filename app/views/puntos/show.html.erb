@@ -12,6 +12,7 @@
       <th scope="col">Out</th>
       <th scope="col">Extra</th>
       <th scope="col">Note</th>
+      <th scope="col">Edit</th>
     </tr>
   </thead>
 <% current_user.puntos.each do |punto| %>
@@ -37,6 +38,7 @@
       <td><%= ((time_diff / 1.hour).round - 9) %></td>
       <% end %>
       <td><%= punto.note %></td>
+      <td><%= link_to 'Edit', edit_punto_path(punto), class: 'btn btn-secondary btn-sm' %></td>
     </tr>
   </tbody>
 <% end %>
