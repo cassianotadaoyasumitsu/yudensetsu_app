@@ -15,9 +15,7 @@
       <% if current_user.admin == true  %>
       <li class="nav-item dropdown">
         <% if current_user.photos.attached? %>
-          <% current_user.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% end %>
+          <%= cl_image_tag @user.photos[0].key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% else %>
           <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% end %>
