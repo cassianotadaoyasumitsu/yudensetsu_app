@@ -1,11 +1,6 @@
 <%= simple_form_for (punto) do |f| %>
 <div class="user-view">
   <% if punto.in && punto.genba %>
-  <div class="row justify-content-around user">
-    <%= f.input :day, as: :hidden %>
-    <%= f.input :night, as: :hidden %>
-    <%= f.input :day_off, as: :hidden %>
-  </div>
   <%= f.input :out, as: :time, html5: true, input_html: { value: Time.now.strftime("%k:%M") } %>
   <%= f.input :note %>
   <%= f.submit "Check Out", class: 'btn btn-primary btn-sm w-100' %>
