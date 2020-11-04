@@ -1,11 +1,11 @@
-<%= simple_form_for (punto) do |f| %>
+<%= simple_form_for([user, punto], url: punto.id.nil? ? "/users/#{user.id}/puntos" : punto_path(punto)) do |f| %>
 <div class="user-view">
   <% if punto.in && punto.genba %>
   <%= f.input :out, as: :time, html5: true, input_html: { value: Time.now.strftime("%k:%M") } %>
   <%= f.input :note %>
   <%= f.submit "Check Out", class: 'btn btn-primary btn-sm w-100' %>
   <% else %>
-  <%= form_with url: new_punto_path do |company_form| %>
+  <%= form_with url: new_user_punto_path do |company_form| %>
   <%= company_form.select :company, Company.all.map{ |cpy| cpy.name }, prompt: (@current_company.nil? ? 'Select a company' : @current_company.name), id: "company2" %>
   <% end %>
   <% unless @current_company.nil? %>
