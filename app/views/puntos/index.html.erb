@@ -1,5 +1,5 @@
 <div class="container d-flex flex-column mt-5 align-items-center">
-<%= link_to 'Back', root_path, class: 'btn btn-info btn-sm m-2' %>
+<%= link_to 'Back', users_path, class: 'btn btn-info btn-sm m-2' %>
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -15,7 +15,7 @@
       <th scope="col">Edit</th>
     </tr>
   </thead>
-<% current_user.puntos.each do |punto| %>
+<% @user.puntos.each do |punto| %>
   <tbody>
     <tr>
       <th scope="row"><%= current_user.id %></th>
@@ -30,6 +30,7 @@
       <td><%= punto.genba.name %></td>
       <td><%= punto.genba.company.name %></td>
       <td><%= punto.in.strftime("%k:%M") %></td>
+      <% unless punto.out.nil? %>
       <td><%= punto.out.strftime("%k:%M") %></td>
       <% time_diff = (punto.out - punto.in) %>
       <% if (time_diff / 1.hour).round <= 9 %>
@@ -37,11 +38,12 @@
       <% else %>
       <td><%= ((time_diff / 1.hour).round - 9) %></td>
       <% end %>
+      <% end %>
       <td><%= punto.note %></td>
       <td><%= link_to 'Edit', edit_punto_path(punto), class: 'btn btn-secondary btn-sm' %></td>
     </tr>
   </tbody>
 <% end %>
 </table>
-<%= link_to "Print", punto_path(current_user, format: :pdf), class: "btn btn-success btn-sm m-2" %>
+<%= link_to "Print", user_puntos_path(current_user, format: :pdf), class: "btn btn-success btn-sm m-2" %>
 </div>
