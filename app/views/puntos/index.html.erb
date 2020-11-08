@@ -15,11 +15,11 @@
       <th scope="col">Edit</th>
     </tr>
   </thead>
-<% @user.puntos.each do |punto| %>
+<% @user.puntos.order(:date, :in).each do |punto| %>
   <tbody>
     <tr>
       <th scope="row"><%= current_user.id %></th>
-      <td><%= punto.date.strftime("%Y%m%d") %></td>
+      <td><%= punto.date.strftime("%d/%m/%Y") %></td>
       <% if punto.day == true %>
       <td>昼勤</td>
       <% elsif punto.night == true %>
