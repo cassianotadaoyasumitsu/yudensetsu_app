@@ -23,7 +23,7 @@ class PuntosController < ApplicationController
     @punto = Punto.new(punto_params)
     @punto.user = @user
     if @punto.save
-      redirect_to edit_punto_path(@punto)
+      redirect_to new_user_punto_path
     else
       flash.alert = "No punto"
       render :new
