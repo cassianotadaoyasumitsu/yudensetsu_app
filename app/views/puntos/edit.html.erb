@@ -7,6 +7,7 @@
 
 <%= simple_form_for @punto do |f| %>
 <div class="user-view">
+  <%= f.input :date, as: :date %>
   <%= f.input :in, as: :time, html5: true  %>
   <%= f.input :out, as: :time, html5: true %>
   <%= f.association :genba, label: 'Genbas', collection: Genba.all %>
@@ -16,7 +17,7 @@
     <%= f.input :day_off %>
   </div>
   <%= f.input :note %>
-  <%= f.submit "Check In", class: 'btn btn-primary btn-sm w-100' %>
+  <%= f.submit "Update", class: 'btn btn-primary btn-sm w-100' %>
 </div>
 <% end %>
 
