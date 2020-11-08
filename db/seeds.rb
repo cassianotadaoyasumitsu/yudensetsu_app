@@ -8,7 +8,7 @@
 require 'faker'
 
 User.destroy_all
-Company.destroy_all
+
 
 puts 'Creating Admin Master'
 
