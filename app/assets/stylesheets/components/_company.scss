@@ -52,3 +52,27 @@
   margin-bottom: 24px;
   padding: 8px;
 }
+
+@media only screen and (max-width: 1199px) {
+  #company {
+    width: 765px;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  #company {
+    width: 526px;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  #company {
+    width: 346px;
+  }
+}
+
+@media only screen and (max-width: 501px) {
+  #company {
+    width: 291px;
+  }
+}
