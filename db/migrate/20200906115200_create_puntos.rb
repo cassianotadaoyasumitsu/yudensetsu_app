@@ -5,6 +5,7 @@ class CreatePuntos < ActiveRecord::Migration[6.0]
       t.datetime :in
       t.datetime :out
       t.text :note
+      t.string :period
       t.boolean :day
       t.boolean :night
       t.boolean :day_off
