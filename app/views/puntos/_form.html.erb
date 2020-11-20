@@ -1,6 +1,7 @@
 <%= simple_form_for (punto) do |f| %>
 <div class="user-view">
   <div class="row justify-content-around user">
+    <%= f.input :period, collection: Punto::PERIOD %>
     <%= f.input :day %>
     <%= f.input :night %>
     <%= f.input :day_off %>
