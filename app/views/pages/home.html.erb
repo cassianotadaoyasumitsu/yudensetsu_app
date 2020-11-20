@@ -1,13 +1,13 @@
-<div class="container d-flex flex-column mt-5 align-items-center">
+<div class="container d-flex flex-column mt-5 align-items-center" style="min-height: 950px;">
   <div class="row justify-content-center">
     <%= image_tag "logo.png", alt: "alttext", class: 'p-5' %>
   </div>
   <% if current_user.admin %>
   <%= link_to 'Employees', users_path, class: 'btn btn-primary w-50 mb-3' %>
   <%= link_to 'Companies', companies_path, class: 'btn btn-success w-50 mb-3' %>
-  <%= link_to 'Time Card', new_punto_path, class: 'btn btn-info w-50 mb-3' %>
+  <%= link_to 'Time Card', new_user_punto_path(current_user), class: 'btn btn-info w-50 mb-3' %>
   <% else %>
-  <%= link_to 'Time Card', new_punto_path, class: 'btn btn-info w-50 mb-3' %>
+  <%= link_to 'Time Card', new_user_punto_path(current_user), class: 'btn btn-info w-50 mb-3' %>
   <%= link_to 'Configuration', edit_user_path(current_user), class: 'btn btn-secondary w-50 mb-3' %>
   <% end %>
 </div>

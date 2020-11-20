@@ -8,10 +8,11 @@
   <div class="user-name lead">
     <p><%= @user.name %></p>
     <p><%= @user.furigana %> </p>
-    <p><% @user.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 150, width: 100, crop: :fill %>
-      <% end %>
+    <% if @user.photos.attached? %>
+    <p>
+      <%= cl_image_tag @user.photos[0].key, height: 150, width: 100, crop: :fill %>
     </p>
+    <% end %>
   </div>
   <div class="user">
     <p>Address: <span><%= @user.address %></span> </p>

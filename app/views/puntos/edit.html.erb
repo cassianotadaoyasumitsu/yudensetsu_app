@@ -1,0 +1,23 @@
+<div class="row justify-content-center">
+  <%= image_tag "logo.png", class: "p-5" %>
+</div>
+<div class="d-flex flex-column align-items-center">
+  <%= link_to 'Back', root_path, class: ' btn btn-info btn-sm' %>
+</div>
+
+<%= simple_form_for @punto do |f| %>
+<div class="user-view">
+  <%= f.input :date, as: :date %>
+  <%= f.input :in, as: :time, html5: true  %>
+  <%= f.input :out, as: :time, html5: true %>
+  <%= f.association :genba, label: 'Genbas', collection: Genba.all %>
+  <div class="row justify-content-around user">
+    <%= f.input :day %>
+    <%= f.input :night %>
+    <%= f.input :day_off %>
+  </div>
+  <%= f.input :note %>
+  <%= f.submit "Update", class: 'btn btn-primary btn-sm w-100' %>
+</div>
+<% end %>
+

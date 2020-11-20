@@ -1,5 +1,5 @@
 class PuntosController < ApplicationController
-  before_action :find_user
+  before_action :find_user, only: [:index, :new, :create]
 
   def index
     @puntos = Punto.all
@@ -11,13 +11,11 @@ class PuntosController < ApplicationController
 
   def new
     @current_company = Company.find_by(name: params[:company])
-    if !current_user.puntos.last
+    # @punto = Punto.new
+    if !@user.puntos.last || @user.puntos.last.out
       @punto = Punto.new
     else
-      @punto = current_user.puntos.last
-      if @punto.out
-        @punto = Punto.new
-      end
+      @punto = @user.puntos.last
     end
   end
 
@@ -25,7 +23,7 @@ class PuntosController < ApplicationController
     @punto = Punto.new(punto_params)
     @punto.user = @user
     if @punto.save
-      redirect_to new_punto_path(@punto)
+      redirect_to new_user_punto_path
     else
       flash.alert = "No punto"
       render :new
@@ -33,10 +31,12 @@ class PuntosController < ApplicationController
   end
 
   def edit
+    @current_company = Company.find_by(name: params[:company])
+    @punto = Punto.find(params[:id])
   end
 
   def update
-    @punto = current_user.puntos.last
+    @punto = Punto.find(params[:id])
     if @punto.in
       @punto.update(punto_params)
       redirect_to root_path
@@ -48,14 +48,14 @@ class PuntosController < ApplicationController
   private
 
   def find_user
-    @user = User.find(current_user.id)
+    @user = User.find(params[:user_id])
   end
 
   def punto_params
     params.require(:punto).permit(
-      :in, :out, :note, :period,
+      :date, :in, :out, :note, :period,
       :day, :night, :day_off,
-      :genba_id
+      :genba_id, :user_id
       )
   end
 end

@@ -8,7 +8,7 @@
 require 'faker'
 
 User.destroy_all
-Company.destroy_all
+
 
 puts 'Creating Admin Master'
 
@@ -31,20 +31,20 @@ puts 'Admin Created'
 
 puts 'Creating Users'
 10.times do
-params = {}
-params[:name] = Faker::Name.name
-params[:furigana] = 'フリガナ'
-params[:address] = Faker::Address.full_address
-params[:pay_number] = '001'
-params[:phone] = '07040670084'
-params[:email] = Faker::Internet.email
-params[:role] = 'Denkiya'
-params[:level_employee] = rand(1..5)
-params[:started_date] = Faker::Date.in_date_period
-params[:password] = '123456'
-params[:admin] = 'false'
-user = User.new(params)
-user.save
+  params = {}
+  params[:name] = Faker::Name.name
+  params[:furigana] = 'フリガナ'
+  params[:address] = Faker::Address.full_address
+  params[:pay_number] = '001'
+  params[:phone] = '07040670084'
+  params[:email] = Faker::Internet.email
+  params[:role] = 'Denkiya'
+  params[:level_employee] = rand(1..5)
+  params[:started_date] = Faker::Date.in_date_period
+  params[:password] = '123456'
+  params[:admin] = 'false'
+  user = User.new(params)
+  user.save
 end
 puts 'Users Created'
 puts 'Creating Companies'

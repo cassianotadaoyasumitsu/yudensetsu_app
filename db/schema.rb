@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2020_09_06_115200) do
   end
 
   create_table "puntos", force: :cascade do |t|
+    t.datetime "date"
     t.datetime "in"
     t.datetime "out"
     t.text "note"

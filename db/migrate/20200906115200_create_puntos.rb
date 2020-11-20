@@ -1,6 +1,7 @@
 class CreatePuntos < ActiveRecord::Migration[6.0]
   def change
     create_table :puntos do |t|
+      t.datetime :date
       t.datetime :in
       t.datetime :out
       t.text :note
@@ -12,6 +13,7 @@ class CreatePuntos < ActiveRecord::Migration[6.0]
 
       t.references :user, null: false, foreign_key: true
       t.references :genba, null: false, foreign_key: true
+
 
       t.timestamps
     end
