@@ -12,7 +12,6 @@
     <%= f.association :genba, label: 'Genbas', collection: @current_company.genbas %>
   <% end %>
   <div class="row justify-content-around user">
-    <%= f.input :period, collection: Punto::PERIOD %>
     <%= f.input :day %>
     <%= f.input :night %>
     <%= f.input :day_off %>

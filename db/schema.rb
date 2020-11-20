@@ -68,7 +68,6 @@ ActiveRecord::Schema.define(version: 2020_09_06_115200) do
     t.datetime "in"
     t.datetime "out"
     t.text "note"
-    t.string "period"
     t.boolean "day"
     t.boolean "night"
     t.boolean "day_off"
