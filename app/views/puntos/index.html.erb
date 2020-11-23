@@ -24,13 +24,7 @@
       <tr>
         <th scope="row"><%= current_user.id %></th>
         <td><%= punto.date.strftime("%d/%m/%Y") %></td>
-        <% if punto.day == true %>
-        <td>昼勤</td>
-        <% elsif punto.night == true %>
-        <td>夜勤</td>
-        <% else %>
-        <td>休み</td>
-        <% end %>
+        <td><%= punto.period %></td>
         <td><%= punto.genba.name %></td>
         <td><%= punto.genba.company.name %></td>
         <td><%= punto.in.strftime("%k:%M") %></td>
