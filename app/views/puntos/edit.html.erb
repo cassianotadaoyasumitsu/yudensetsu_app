@@ -11,12 +11,7 @@
   <%= f.input :in, as: :time, html5: true  %>
   <%= f.input :out, as: :time, html5: true %>
   <%= f.association :genba, label: 'Genbas', collection: Genba.all %>
-  <div class="row justify-content-around user">
-    <%= f.input :period, collection: Punto::PERIOD %>
-    <%= f.input :day %>
-    <%= f.input :night %>
-    <%= f.input :day_off %>
-  </div>
+  <%= f.input :period, collection: Punto::PERIOD %>
   <%= f.input :note %>
   <%= f.submit "Update", class: 'btn btn-primary btn-sm w-100' %>
 </div>
