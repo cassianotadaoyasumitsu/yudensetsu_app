@@ -1,0 +1,8 @@
+<%= simple_form_for(car) do |f| %>
+<div class="forms">
+  <%= f.input :car_number %>
+  <%= f.input :car_name %>
+  <%= f.input :car_plate %>
+  <%= f.submit car.persisted? ? 'Edit' : 'Create', class: 'btn btn-primary w-100' %>
+</div>
+<% end %>
