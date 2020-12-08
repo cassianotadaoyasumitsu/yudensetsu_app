@@ -55,7 +55,7 @@ class PuntosController < ApplicationController
     params.require(:punto).permit(
       :date, :in, :out, :note,
       :day, :night, :day_off,
-      :genba_id, :user_id, :period
+      :genba_id, :user_id, :period, :company_id
       )
   end
 end
