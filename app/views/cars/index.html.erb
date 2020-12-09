@@ -5,13 +5,25 @@
   <%= link_to 'Back', root_path, class: 'btn btn-info btn-sm m-2' %>
   <%= link_to 'New Car', new_car_path, class: 'btn btn-primary btn-sm m-2' %>
 </div>
-<div class="row justify-content-around">
-  <% @cars.each do |car| %>
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>
-  <% end %>
-</div>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Number</th>
+        <th scope="col">Car</th>
+        <th scope="col">Plate</th>
+        <th scope="col">Fuel</th>
+        <th scope="col">Oil</th>
+        <th scope="col">Punto</th>
+      </tr>
+    </thead>
+    <% @cars.each do |car| %>
+    <tbody>
+      <tr>
+        <th scope="row"><%= car.car_number %></th>
+        <td><%= car.car_name %></td>
+        <td><%= car.car_plate %></td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
