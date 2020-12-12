@@ -52,12 +52,13 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(
       :admin, :name, :furigana, :address, :phone, :password,
-      :email, :role, :job_exp, :started_date, :drive_licence,
-      :pay_number, :licence1, :licence2, :licence3,
-      :licence4, :licence5, :licence6, :licence7, :licence8,
-      :licence9, :licence10, :licence11, :licence12, :licence13,
-      :licence14, :licence15, :licence16, :licence17, :licence18,
-      :licence19, :licence20, :level_employee, :healthy_exam,
+      :email, :role, :job_exp, :started_date, :drive_license,
+      :pay_number, :license1, :license2, :license3,
+      :license4, :license5, :license6, :license7, :license8,
+      :license9, :license10, :license11, :license12, :license13,
+      :license14, :license15, :license16, :license17, :license18,
+      :license19, :license20, :license21, :license22, :license23,
+      :license24, :license25, :level_employee, :healthy_exam,
       :document, :document_date, :passport, :passport_date,
       :active, :weekend, :night_shift, photos: []
       )

@@ -16,11 +16,11 @@ puts 'Creating Admin Master'
 params = {}
 params[:name] = 'Cassiano Tadao Yasumitsu'
 params[:furigana] = 'ヤスミツ　カシアノ　タダオ'
-params[:address] = 'Tsurumi'
+params[:address] = 'Yokohama'
 params[:pay_number] = '001'
 params[:phone] = '07040670084'
 params[:email] = 'admin@yasumitsu.io'
-params[:role] = 'Denkiya'
+params[:role] = '電気技師'
 params[:level_employee] = rand(1..5)
 params[:started_date] = '1979/12/01'
 params[:password] = 'Cassian0'
