@@ -11,13 +11,13 @@
     %>
   </div>
   <div>
-    <%= submit_tag "Search", class: "btn btn-success btn-sm m-2" %>
+    <%= submit_tag "探す", class: "btn btn-success btn-sm m-2" %>
     <% end %>
   </div>
 </div>
 <div class="d-flex flex-column align-items-center">
-  <%= link_to 'Back', root_path, class: 'btn btn-info btn-sm m-2' %>
-  <%= link_to 'New Company', new_company_path, class: 'btn btn-primary btn-sm m-2' %>
+  <%= link_to '戻る', root_path, class: 'btn btn-info btn-sm m-2' %>
+  <%= link_to '新会社', new_company_path, class: 'btn btn-primary btn-sm m-2' %>
 </div>
 <ul class="list-group mb-2">
   <% @companies.each do |company| %>
@@ -27,11 +27,11 @@
         <%= company.name %> / <%= company.furigana %>
       </div>
       <div>
-        <%= link_to 'View', company_path(company), class: 'btn btn-primary btn-sm' %>
-        <%= link_to 'Edit', edit_company_path(company), class: 'btn btn-secondary btn-sm' %>
-        <%= link_to 'Delete', company_path(company),
+        <%= link_to '見る', company_path(company), class: 'btn btn-primary btn-sm' %>
+        <%= link_to '編集', edit_company_path(company), class: 'btn btn-secondary btn-sm' %>
+        <%= link_to '削除', company_path(company),
         method: :delete,
-        data: { confirm: 'Are you sure?' },
+        data: { confirm: '本気ですか？' },
         class: 'btn btn-danger btn-sm' %>
       </div>
     </div>

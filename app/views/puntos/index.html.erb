@@ -1,22 +1,22 @@
 <div class="container d-flex flex-column mt-5 align-items-center">
   <% if current_user.admin? %>
-  <%= link_to 'Back', users_path, class: 'btn btn-info btn-sm m-2' %>
+  <%= link_to '戻る', users_path, class: 'btn btn-info btn-sm m-2' %>
   <% else %>
-  <%= link_to 'Back', root_path, class: 'btn btn-info btn-sm m-2' %>
+  <%= link_to '戻る', root_path, class: 'btn btn-info btn-sm m-2' %>
   <% end %>
   <table class="table">
     <thead class="thead-dark">
       <tr>
         <th scope="col">id</th>
-        <th scope="col">Date</th>
-        <th scope="col">Turn</th>
-        <th scope="col">Genba</th>
-        <th scope="col">Company</th>
-        <th scope="col">In</th>
-        <th scope="col">Out</th>
-        <th scope="col">Extra</th>
-        <th scope="col">Note</th>
-        <th scope="col">Edit</th>
+        <th scope="col">日付</th>
+        <th scope="col">期間</th>
+        <th scope="col">現場</th>
+        <th scope="col">企業</th>
+        <th scope="col">タイムイン</th>
+        <th scope="col">タイムアウト</th>
+        <th scope="col">残業</th>
+        <th scope="col">注意</th>
+        <th scope="col">編集</th>
       </tr>
     </thead>
     <% @user.puntos.order(:date, :in).each do |punto| %>
@@ -38,10 +38,10 @@
         <% end %>
         <% end %>
         <td><%= punto.note %></td>
-        <td><%= link_to 'Edit', edit_punto_path(punto), class: 'btn btn-secondary btn-sm' %></td>
+        <td><%= link_to '編集', edit_punto_path(punto), class: 'btn btn-secondary btn-sm' %></td>
       </tr>
     </tbody>
     <% end %>
   </table>
-  <%= link_to "Print", user_puntos_path(current_user, format: :pdf), class: "btn btn-success btn-sm m-2" %>
+  <!-- <%= link_to "Print", user_puntos_path(current_user, format: :pdf), class: "btn btn-success btn-sm m-2" %> -->
 </div>
