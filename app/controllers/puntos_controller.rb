@@ -22,6 +22,7 @@ class PuntosController < ApplicationController
   def create
     @punto = Punto.new(punto_params)
     @punto.user = @user
+    @punto.company_id = "1"
     if @punto.save
       redirect_to new_user_punto_path
     else
