@@ -39,7 +39,7 @@ puts 'Creating Users'
   params[:pay_number] = '001'
   params[:phone] = '07040670084'
   params[:email] = Faker::Internet.email
-  params[:role] = 'Denkiya'
+  params[:role] = '電気技師'
   params[:level_employee] = rand(1..5)
   params[:started_date] = Faker::Date.in_date_period
   params[:password] = '123456'
