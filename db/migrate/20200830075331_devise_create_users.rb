@@ -25,28 +25,33 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :job_exp
       t.string :pay_number
       t.date :started_date
-      t.boolean :licence1, default: false
-      t.boolean :licence2, default: false
-      t.boolean :licence3, default: false
-      t.boolean :licence4, default: false
-      t.boolean :licence5, default: false
-      t.boolean :licence6, default: false
-      t.boolean :licence7, default: false
-      t.boolean :licence8, default: false
-      t.boolean :licence9, default: false
-      t.boolean :licence10, default: false
-      t.boolean :licence11, default: false
-      t.boolean :licence12, default: false
-      t.boolean :licence13, default: false
-      t.boolean :licence14, default: false
-      t.boolean :licence15, default: false
-      t.boolean :licence16, default: false
-      t.boolean :licence17, default: false
-      t.boolean :licence18, default: false
-      t.boolean :licence19, default: false
-      t.boolean :licence20, default: false
+      t.boolean :license1, default: false
+      t.boolean :license2, default: false
+      t.boolean :license3, default: false
+      t.boolean :license4, default: false
+      t.boolean :license5, default: false
+      t.boolean :license6, default: false
+      t.boolean :license7, default: false
+      t.boolean :license8, default: false
+      t.boolean :license9, default: false
+      t.boolean :license10, default: false
+      t.boolean :license11, default: false
+      t.boolean :license12, default: false
+      t.boolean :license13, default: false
+      t.boolean :license14, default: false
+      t.boolean :license15, default: false
+      t.boolean :license16, default: false
+      t.boolean :license17, default: false
+      t.boolean :license18, default: false
+      t.boolean :license19, default: false
+      t.boolean :license20, default: false
+      t.boolean :license21, default: false
+      t.boolean :license22, default: false
+      t.boolean :license23, default: false
+      t.boolean :license24, default: false
+      t.boolean :license25, default: false
       t.date :healthy_exam
-      t.date :drive_licence
+      t.date :drive_license
       t.string :document
       t.date :document_date
       t.string :passport

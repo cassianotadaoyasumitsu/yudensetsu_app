@@ -1,59 +1,64 @@
 <%= simple_form_for(user) do |f| %>
 <% if current_user.admin %>
 <div class="forms">
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <p><%= f.input :name, label: '氏名 (Full Name):' %></p>
-  <p><%= f.input :furigana %></p>
-  <%= f.input :address %>
-  <p><%= f.input :phone %></p>
-  <p><%= f.input :email %></p>
+  <%= f.input :photos, label: "写真", as: :file, input_html: { multiple: true } %>
+  <p><%= f.input :name, label: '氏名' %></p>
+  <p><%= f.input :furigana, label: "フリガナ" %></p>
+  <%= f.input :address, label: "住所" %>
+  <p><%= f.input :phone, label: "電話" %></p>
+  <p><%= f.input :email, label: "Eメール" %></p>
   <% if @user.persisted? %>
   <% else %>
-  <%= f.input :password %>
+  <%= f.input :password, label: "パスワード" %>
   <% end %>
-  <%= f.input :role, collection: User::ROLES %>
-  <%= f.input :level_employee, collection: 1..5 %>
-  <%= f.input :started_date %>
-  <%= f.input :job_exp %>
-  <%= f.input :pay_number %>
+  <%= f.input :role, label: "役割", collection: User::ROLES %>
+  <%= f.input :level_employee, label: "レベル", collection: 1..5 %>
+  <%= f.input :started_date, label: "開始日" %>
+  <%= f.input :job_exp, label: "仕事の経験" %>
+  <%= f.input :pay_number, label: "支払い番号" %>
   <div class="row justify-content-around">
     <div>
-      <%= f.input :licence1, as: :boolean %>
-      <%= f.input :licence2, as: :boolean %>
-      <%= f.input :licence3, as: :boolean %>
-      <%= f.input :licence4, as: :boolean %>
-      <%= f.input :licence5, as: :boolean, label: 'Driver Licence:' %>
+      <%= f.input :license1, label: "第一種電気工事士", as: :boolean %>
+      <%= f.input :license2, label: "第二種電気工事士", as: :boolean %>
+      <%= f.input :license3, label: "職長教育", as: :boolean %>
+      <%= f.input :license4, label: "職長安全", as: :boolean %>
+      <%= f.input :license5, label: "運転免許証", as: :boolean %>
     </div>
     <div>
-      <%= f.input :licence6, as: :boolean %>
-      <%= f.input :licence7, as: :boolean %>
-      <%= f.input :licence8, as: :boolean %>
-      <%= f.input :licence9, as: :boolean %>
-      <%= f.input :licence10, as: :boolean %>
+      <%= f.input :license6, label: "低圧", as: :boolean %>
+      <%= f.input :license7, label: "高所作業車", as: :boolean %>
+      <%= f.input :license8, label: "玉掛け", as: :boolean %>
+      <%= f.input :license9, label: "高圧、特別高圧、低圧取扱", as: :boolean %>
+      <%= f.input :license10, label: "高所作業車 10以上", as: :boolean %>
     </div>
     <div>
-      <%= f.input :licence11, as: :boolean %>
-      <%= f.input :licence12, as: :boolean %>
-      <%= f.input :licence13, as: :boolean %>
-      <%= f.input :licence14, as: :boolean %>
-      <%= f.input :licence15, as: :boolean %>
+      <%= f.input :license11, label: "酸素欠乏　危険作業", as: :boolean %>
+      <%= f.input :license12, label: "自由研削といしの取替", as: :boolean %>
+      <%= f.input :license13, label: "班長教育", as: :boolean %>
+      <%= f.input :license14, label: "有機溶剤取扱", as: :boolean %>
+      <%= f.input :license15, label: "ア　ー　ク 溶 接", as: :boolean %>
     </div>
     <div>
-      <%= f.input :licence16, as: :boolean %>
-      <%= f.input :licence17, as: :boolean %>
-      <%= f.input :licence18, as: :boolean %>
-      <%= f.input :licence19, as: :boolean %>
-      <%= f.input :licence20, as: :boolean %>
+      <%= f.input :license16, label: "粉じん特別教育", as: :boolean %>
+      <%= f.input :license17, label: "フルハーネス", as: :boolean %>
+      <%= f.input :license18, label: "足場立て", as: :boolean %>
+      <%= f.input :license19, label: "ﾌｫｰｸﾘﾌﾄ運転", as: :boolean %>
+      <%= f.input :license20, label: "クレーン", as: :boolean %>
+    </div>
+    <div>
+      <%= f.input :license21, label: "丸のこ クレーン", as: :boolean %>
+      <%= f.input :license22, label: "車輌系建設機械", as: :boolean %>
+      <%= f.input :license23, label: "石綿取扱い作業従事者", as: :boolean %>
     </div>
   </div>
-  <%= f.input :drive_licence %>
-  <%= f.input :healthy_exam %>
-  <%= f.input :document, label: 'Zairyo Card'  %>
-  <%= f.input :document_date, label: 'Expire' %>
-  <%= f.input :passport %>
-  <%= f.input :passport_date, label: 'Expire' %>
-  <%= f.input :active %>
-  <%= f.input :admin %>
+  <%= f.input :drive_license, label: "運転免許証" %>
+  <%= f.input :healthy_exam, label: "健康診断" %>
+  <%= f.input :document, label: '在留カード'  %>
+  <%= f.input :document_date, label: '期限切れ' %>
+  <%= f.input :passport, label: "パスポート" %>
+  <%= f.input :passport_date, label: '期限切れ' %>
+  <%= f.input :active, label: "アクティブ" %>
+  <%= f.input :admin, label: "管理者" %>
   <%= f.submit @user.persisted? ? 'Edit' : 'Create', class: 'btn btn-primary btn-sm w-100' %>
 </div>
 <% else %>
