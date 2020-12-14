@@ -1,10 +1,10 @@
 <%= simple_form_for [company, genba] do |f| %>
 <div class="forms">
-<%= f.input :name %>
-<%= f.input :address %>
-<%= f.input :phone %>
-<%= f.input :contact %>
-<%= f.input :closure %>
-<%= f.submit class: 'bnt btn-primary w-100' %>
+<%= f.input :name, label: "現場名" %>
+<%= f.input :address, label: "住所" %>
+<%= f.input :phone, label: "電話" %>
+<%= f.input :contact, label: "担当者" %>
+<%= f.input :closure, label: "閉鎖日" %>
+<%= f.submit genba.persisted? ? '編集' : '作成する', class: 'bnt btn-primary w-100' %>
 <% end %>
 </div>
