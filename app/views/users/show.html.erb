@@ -2,9 +2,10 @@
   <%= image_tag "logo.png", class: "p-5" %>
 </div>
 <div class="d-flex flex-column align-items-center">
-  <%= link_to 'Back', users_path, class: ' btn btn-info btn-sm' %>
+  <%= link_to '戻る', users_path, class: ' btn btn-info btn-sm' %>
 </div>
 <div class="user-view">
+  <h1>情報</h1>
   <div class="user-name lead">
     <p><%= @user.name %></p>
     <p><%= @user.furigana %> </p>
@@ -15,68 +16,77 @@
     <% end %>
   </div>
   <div class="user">
-    <p>Address: <span><%= @user.address %></span> </p>
+    <p>住所 <span><%= @user.address %></span> </p>
   </div>
   <div class="user">
-    <p>Pay Number: <span><%= @user.pay_number %></span>  </p>
-    <p>Phone: <span><%= @user.phone %></span></p>
-    <p>Email: <span><%= @user.email %></span></p>
+    <p>支払い番号 <span><%= @user.pay_number %></span>  </p>
+    <p>電話 <span><%= @user.phone %></span></p>
+    <p>Eメール <span><%= @user.email %></span></p>
   </div>
   <div class="user">
-    <p>Role: <span><%= @user.role %></span> </p>
-    <p>Level: <span><%= @user.level_employee %></span> </p>
-    <p>Started at: <span><%= @user.started_date %></span> </p>
-    <p>Job Exp: <span><%= @user.job_exp %></span> </p>
+    <p>役割 <span><%= @user.role %></span> </p>
+    <p>レベル <span><%= @user.level_employee %></span> </p>
+    <p>開始日 <span><%= @user.started_date %></span> </p>
+    <p>仕事の経験 <span><%= @user.job_exp %></span> </p>
+  </div>
+  <h1>ライセンス</h1>
+  <div class="user">
+    <p>第一種電気工事士 <span><%= @user.license1  ? '有り' : 'なし'  %></span> </p>
+    <p>第二種電気工事士 <span><%= @user.license2  ? '有り' : 'なし'  %></span> </p>
+    <p>職長教育 <span><%= @user.license3  ? '有り' : 'なし'  %></span> </p>
+    <p>職長安全 <span><%= @user.license4  ? '有り' : 'なし'  %></span> </p>
   </div>
   <div class="user">
-    <p>license?: <span><%= @user.license1  ? 'Yes 🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    <p>license?: <span><%= @user.license2  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    <p>license?: <span><%= @user.license3  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    <p>license?: <span><%= @user.license4  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    </div>
-    <div class="user">
-    <p>license?: <span><%= @user.license6  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    <p>license?: <span><%= @user.license7  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    <p>license?: <span><%= @user.license8  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    <p>license?: <span><%= @user.license9  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    <p>license?: <span><%= @user.license10  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    </div>
-    <div class="user">
-    <p>license?: <span><%= @user.license11  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    <p>license?: <span><%= @user.license12  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    <p>license?: <span><%= @user.license13  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    <p>license?: <span><%= @user.license14  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    <p>license?: <span><%= @user.license15  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    </div>
-    <div class="user">
-    <p>license?: <span><%= @user.license16  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    <p>license?: <span><%= @user.license17  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    <p>license?: <span><%= @user.license18  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    <p>license?: <span><%= @user.license19  ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
-    <p>license?: <span><%= @user.license20 ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️'  %></span> </p>
+    <p>低圧 <span><%= @user.license6  ? '有り' : 'なし'  %></span> </p>
+    <p>高所作業車 <span><%= @user.license7  ? '有り' : 'なし'  %></span> </p>
+    <p>玉掛け <span><%= @user.license8  ? '有り' : 'なし'  %></span> </p>
   </div>
   <div class="user">
-    <p>Driver license: <span><%= @user.license5 %></span> </p>
-    <p>Driver license Venc.: <span><%= @user.drive_license %></span> </p>
+    <p>高圧、特別高圧、低圧取扱 <span><%= @user.license9  ? '有り' : 'なし'  %></span> </p>
+    <p>高所作業車 10以上 <span><%= @user.license10  ? '有り' : 'なし'  %></span> </p>
   </div>
   <div class="user">
-    <p>Health Exam: <span><%= @user.healthy_exam %></span> </p>
+    <p>酸素欠乏　危険作業 <span><%= @user.license11  ? '有り' : 'なし'  %></span> </p>
+    <p>自由研削といしの取替 <span><%= @user.license12  ? '有り' : 'なし'  %></span> </p>
+    <p>班長教育 <span><%= @user.license13  ? '有り' : 'なし'  %></span> </p>
   </div>
   <div class="user">
-    <p>Zairyo Card: <span><%= @user.document %></span> </p>
-    <p>Expire: <span><%= @user.document_date %></span> </p>
+    <p>有機溶剤取扱 <span><%= @user.license14  ? '有り' : 'なし'  %></span> </p>
+    <p>ア　ー　ク 溶 接 <span><%= @user.license15  ? '有り' : 'なし'  %></span> </p>
+    <p>粉じん特別教育 <span><%= @user.license16  ? '有り' : 'なし'  %></span> </p>
+    <p>フルハーネス <span><%= @user.license17  ? '有り' : 'なし'  %></span> </p>
   </div>
   <div class="user">
-    <p>Passaport: <span><%= @user.passport %></span> </p>
-    <p>Expire: <span><%= @user.passport_date %></span> </p>
+    <p>足場立て <span><%= @user.license18  ? '有り' : 'なし'  %></span> </p>
+    <p>ﾌｫｰｸﾘﾌﾄ運転 <span><%= @user.license19  ? '有り' : 'なし'  %></span> </p>
+    <p>クレーン <span><%= @user.license20 ? '有り' : 'なし'  %></span> </p>
   </div>
   <div class="user">
-    <p>Weekend: <span><%= @user.weekend ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %></span> </p>
-    <p>Night Shift: <span><%= @user.night_shift ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %></span> </p>
-    <p>Active User: <span><%= @user.active ? 'Yes 🙆🏻‍♂️' : 'No 🙅🏻‍♂️' %></span> </p>
+    <p>丸のこ クレーン <span><%= @user.license21 ? '有り' : 'なし' %></span> </p>
+    <p>車輌系建設機械 <span><%= @user.license22 ? '有り' : 'なし' %></span> </p>
+    <p>石綿取扱い作業従事者 <span><%= @user.license23 ? '有り' : 'なし' %></span> </p>
+  </div>
+  <h1>文書</h1>
+  <div class="user">
+    <p>運転免許証 <span><%= @user.license5 ? '有り' : 'なし'  %></span> </p>
+    <p>期限切れ <span><%= @user.drive_license %></span> </p>
   </div>
   <div class="user">
-    <p>Password: <span><%= @user.password %></span> </p>
+    <p>健康診断 <span><%= @user.healthy_exam %></span> </p>
+  </div>
+  <div class="user">
+    <p>在留カード <span><%= @user.document %></span> </p>
+    <p>期限切れ <span><%= @user.document_date %></span> </p>
+  </div>
+  <div class="user">
+    <p>パスポート <span><%= @user.passport %></span> </p>
+    <p>期限切れ <span><%= @user.passport_date %></span> </p>
+  </div>
+  <h1>オプション</h1>
+  <div class="user">
+    <p>週末 <span><%= @user.weekend ? 'はい' : 'いいえ' %></span> </p>
+    <p>夜 <span><%= @user.night_shift ? 'はい' : 'いいえ' %></span> </p>
+    <p>アクティブ <span><%= @user.active ? 'はい' : 'いいえ' %></span> </p>
   </div>
 </div>
 

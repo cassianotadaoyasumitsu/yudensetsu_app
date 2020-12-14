@@ -51,7 +51,7 @@
       <%= f.input :license23, label: "石綿取扱い作業従事者", as: :boolean %>
     </div>
   </div>
-  <%= f.input :drive_license, label: "運転免許証" %>
+  <%= f.input :drive_license, label: "期限切れ" %>
   <%= f.input :healthy_exam, label: "健康診断" %>
   <%= f.input :document, label: '在留カード'  %>
   <%= f.input :document_date, label: '期限切れ' %>
@@ -59,17 +59,17 @@
   <%= f.input :passport_date, label: '期限切れ' %>
   <%= f.input :active, label: "アクティブ" %>
   <%= f.input :admin, label: "管理者" %>
-  <%= f.submit @user.persisted? ? 'Edit' : 'Create', class: 'btn btn-primary btn-sm w-100' %>
+  <%= f.submit @user.persisted? ? '編集' : '作成する', class: 'btn btn-primary btn-sm w-100' %>
 </div>
 <% else %>
 <div class="forms">
   <div class="col-xs-12 col-sm-11 col-md-8 col-lg-5 col-xl-4">
     <div class="row justify-content-around">
-      <%= f.input :weekend %>
-      <%= f.input :night_shift %>
+      <%= f.input :weekend, label: "週末" %>
+      <%= f.input :night_shift, label: "夜" %>
     </div>
   </div>
-  <%= f.submit @user.persisted? ? 'Edit' : 'Create', class: 'btn btn-primary btn-sm w-100' %>
+  <%= f.submit @user.persisted? ? '編集' : '作成する', class: 'btn btn-primary btn-sm w-100' %>
 </div>
 <% end %>
 <% end %>
