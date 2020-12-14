@@ -5,4 +5,5 @@ class Punto < ApplicationRecord
    PERIOD = ['⚪️ 日', '⚫️ 夜', '🟢 休みの日', '⬜️ 朝', '⬛️ 午後']
 
    validates :period, inclusion: { in: PERIOD }
+
 end

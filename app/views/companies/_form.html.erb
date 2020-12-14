@@ -1,15 +1,15 @@
 <%= simple_form_for(company) do |f| %>
 <div class="forms">
-  <%= f.input :name %>
-  <%= f.input :furigana %>
-  <%= f.input :ceo %>
-  <%= f.input :address %>
-  <%= f.input :address2 %>
-  <%= f.input :phone %>
-  <%= f.input :fax%>
-  <%= f.input :contact %>
-  <%= f.input :email %>
-  <%= f.input :closure, collection: 1..31 %>
-  <%= f.submit company.persisted? ? 'Edit' : 'Create', class: 'btn btn-primary w-100' %>
+  <%= f.input :name, label: "会社名" %>
+  <%= f.input :furigana, label: "フリガナ" %>
+  <%= f.input :ceo, label: "社長" %>
+  <%= f.input :address, label: "住所" %>
+  <%= f.input :address2, label: "住所" %>
+  <%= f.input :phone, label: "電話" %>
+  <%= f.input :fax, label: "ファックス" %>
+  <%= f.input :contact, label: "担当者" %>
+  <%= f.input :email, label: "Eメール" %>
+  <%= f.input :closure, label: "閉鎖日", collection: 1..31 %>
+  <%= f.submit company.persisted? ? '編集' : '作成する', class: 'btn btn-primary w-100' %>
 </div>
 <% end %>

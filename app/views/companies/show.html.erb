@@ -2,7 +2,7 @@
   <%= image_tag "logo.png", class: "p-5" %>
 </div>
 <div class="d-flex flex-column align-items-center">
-  <%= link_to 'Back', companies_path, class: ' btn btn-info btn-sm' %>
+  <%= link_to '戻る', companies_path, class: ' btn btn-info btn-sm' %>
 </div>
 <div class="company-view">
   <div class="company-name lead">
@@ -11,48 +11,48 @@
   </div>
 
 <div class="company">
-  <p>Owner: <span><%= @company.ceo %></span></p>
+  <p>社長 <span><%= @company.ceo %></span></p>
   </div>
   <div class="company">
-  <p>Address: <span><%= @company.address %></span></p>
+  <p>住所 <span><%= @company.address %></span></p>
   </div>
   <div class="company">
-  <p>Address: <span><%= @company.address2 %></span></p>
+  <p>住所 <span><%= @company.address2 %></span></p>
   </div>
   <div class="company">
-  <p>Contact: <span><%= @company.contact %></span></p>
-  <p>Phone: <span><%= @company.phone %></span></p>
+  <p>担当者 <span><%= @company.contact %></span></p>
+  <p>電話 <span><%= @company.phone %></span></p>
   </div>
   <div class="company">
-  <p>Fax: <span><%= @company.fax %></span></p>
-  <p>Email: <span><%= @company.email %></span></p>
+  <p>ファックス <span><%= @company.fax %></span></p>
+  <p>Eメール <span><%= @company.email %></span></p>
   </div>
   <div class="company">
-  <p>Closure: <span><%= @company.closure %></span></p>
+  <p>閉鎖日 <span><%= @company.closure %></span></p>
   </div>
 
 
 
 
   <div class="d-flex flex-column align-items-center">
-    <%= link_to 'New Genba', new_company_genba_path(@company), class: 'btn btn-primary mb-5'  %>
+    <%= link_to '新現場', new_company_genba_path(@company), class: 'btn btn-primary mb-5'  %>
   </div>
 
   <div class="row justify-content-around">
     <% @company.genbas.each do |genba| %>
     <div class="card text-center mb-5">
       <div class="card-header">
-       Name: <%= genba.name %>
+       現場名 <%= genba.name %>
      </div>
      <div class="card-body">
       <p class="card-title"> <span>Contact: </span> <%= genba.contact %></p>
       <p class="card-text">
-        Address: <%= genba.address %>
+        住所 <%= genba.address %>
       </p>
-      <p>Closure: <%= genba.closure %></p>
+      <p>閉鎖日 <%= genba.closure %></p>
     </div>
     <div class="card-footer text-muted">
-      Phone: <%= genba.phone %>
+      電話 <%= genba.phone %>
     </div>
   </div>
   <% end %>
