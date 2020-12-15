@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many_attached :photos
   has_many :puntos, dependent: :destroy
-  ROLES = %w(電気技師 Shokucho)
+  ROLES = %w(電気技師 Shokucho Admin)
 
   validates :name, presence: true
   validates :address, presence: true
