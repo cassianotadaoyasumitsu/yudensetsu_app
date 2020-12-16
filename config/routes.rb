@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users, skip: :registration
-    root to: 'pages#home'
+  root to: 'pages#home'
+  as :user do
+    get 'users/edit', to:  'devise/registrations#edit', as: 'edit_user_registration'
+    put 'users', to:  'devise/registrations#update', as: 'user_registration'
+  end
     #devise_scope :user do
      # authenticated :user do
      #   root to: 'pages#home'
