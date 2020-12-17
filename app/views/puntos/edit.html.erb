@@ -8,10 +8,10 @@
 <%= simple_form_for @punto do |f| %>
 <div class="user-view">
   <%= f.input :date, label: "日付", as: :date %>
-  <%= f.input :in, label: "タイムイン", as: :time, html5: true  %>
-  <%= f.input :out, label: "タイムアウト", as: :time, html5: true %>
+  <%= f.input :in, label: "出勤", as: :time, html5: true  %>
+  <%= f.input :out, label: "退勤", as: :time, html5: true %>
   <%= f.association :genba, label: '現場', collection: Genba.all %>
-  <%= f.input :period, label: "期間", collection: Punto::PERIOD %>
+  <%= f.input :period, label: "シフト", collection: Punto::PERIOD %>
   <%= f.input :note, label: "注意" %>
   <%= f.submit "更新", class: 'btn btn-primary btn-sm w-100' %>
 </div>
