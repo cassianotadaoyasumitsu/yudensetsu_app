@@ -1,19 +1,19 @@
 <%= simple_form_for([user, punto], url: punto.id.nil? ? "/users/#{user.id}/puntos" : punto_path(punto)) do |f| %>
 <div class="user-view">
   <% if punto.in && punto.genba %>
-    <%= f.input :out, label: "タイムアウト", as: :time, html5: true, input_html: { value: Time.now.strftime("%k:%M") } %>
+    <%= f.input :out, label: "退勤", as: :time, html5: true, input_html: { value: Time.now.strftime("%k:%M") } %>
     <%= f.input :note, label: "注意" %>
     <%= f.submit "チェックアウト", class: 'btn btn-primary btn-sm w-100' %>
   <% else %>
     <%= form_with url: new_user_punto_path do |company_form| %>
-    <%= company_form.select :company, Company.all.map{ |cpy| cpy.name }, prompt: (@current_company.nil? ? '会社を選択してください' : @current_company.name), id: "company2" %>
+    <%= company_form.select :company, Company.all.map{ |cpy| cpy.name }, prompt: (@current_company.nil? ? '取引先を選択してください' : @current_company.name), id: "company2" %>
   <% end %>
   <% unless @current_company.nil? %>
     <%= f.association :genba, label: '現場', collection: @current_company.genbas %>
   <% end %>
-    <%= f.input :period, label: "期間", collection: Punto::PERIOD %>
+    <%= f.input :period, label: "シフト", collection: Punto::PERIOD %>
     <%= f.input :date, label: "日付", as: :date %>
-    <%= f.input :in, label: "タイムイン", as: :time, html5: true, input_html: { value: Time.now.strftime("%k:%M") } %>
+    <%= f.input :in, label: "出勤", as: :time, html5: true, input_html: { value: Time.now.strftime("%k:%M") } %>
     <%= f.input :note, label: "注意", as: :hidden %>
     <%= f.submit "チェックイン", class: 'btn btn-primary btn-sm w-100' %>
   <% end %>
