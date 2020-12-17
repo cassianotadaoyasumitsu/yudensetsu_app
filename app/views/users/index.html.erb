@@ -27,7 +27,7 @@
         <%= user.name %> / <%= user.furigana %>
       </div>
       <div>
-        <%= link_to '見る', user_path(user), class: 'btn btn-success btn-sm' %>
+        <%= link_to '情報', user_path(user), class: 'btn btn-success btn-sm' %>
         <%= link_to '編集', edit_user_path(user), class: 'btn btn-secondary btn-sm' %>
         <%= link_to '削除', user_path(user), class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %>
         <%= link_to 'タイムカード', user_puntos_path(user), class: 'btn btn-info btn-sm' %>
