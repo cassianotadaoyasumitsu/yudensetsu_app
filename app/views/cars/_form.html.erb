@@ -1,8 +1,8 @@
 <%= simple_form_for(car) do |f| %>
 <div class="forms">
-  <%= f.input :car_number %>
-  <%= f.input :car_name %>
-  <%= f.input :car_plate %>
-  <%= f.submit car.persisted? ? 'Edit' : 'Create', class: 'btn btn-primary w-100' %>
+  <%= f.input :car_number, label: "番号" %>
+  <%= f.input :car_name, label: "車のモデル" %>
+  <%= f.input :car_plate, label: "プレート" %>
+  <%= f.submit car.persisted? ? '編集' : '作成する', class: 'btn btn-primary w-100' %>
 </div>
 <% end %>
