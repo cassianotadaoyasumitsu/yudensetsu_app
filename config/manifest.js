@@ -1,3 +1,5 @@
+// app/assets/config/manifest.js
+// ...
 //= link_tree ../images
 //= link_directory ../stylesheets .css
 {
@@ -14,6 +16,7 @@
     "sizes": "<%= match && match[:size] %>",
     "type": "image/png"
   }<%= "," unless (files.size - 1) == index %>
-  <% end %>
+  <% end %>ß
   ]
 }
+//= link manifest.json
