@@ -10,25 +10,25 @@
     <p><%= @company.furigana %></p>
   </div>
 
-<div class="company">
-  <p>社長 <span><%= @company.ceo %></span></p>
+  <div class="company">
+    <p>社長 <span><%= @company.ceo %></span></p>
   </div>
   <div class="company">
-  <p>住所 <span><%= @company.address %></span></p>
+    <p>住所 <span><%= @company.address %></span></p>
   </div>
   <div class="company">
-  <p>住所 <span><%= @company.address2 %></span></p>
+    <p>住所 <span><%= @company.address2 %></span></p>
   </div>
   <div class="company">
-  <p>担当者 <span><%= @company.contact %></span></p>
-  <p>電話 <span><%= @company.phone %></span></p>
+    <p>担当者 <span><%= @company.contact %></span></p>
+    <p>電話 <span><%= @company.phone %></span></p>
   </div>
   <div class="company">
-  <p>ファックス <span><%= @company.fax %></span></p>
-  <p>Eメール <span><%= @company.email %></span></p>
+    <p>ファックス <span><%= @company.fax %></span></p>
+    <p>Eメール <span><%= @company.email %></span></p>
   </div>
   <div class="company">
-  <p>閉鎖日 <span><%= @company.closure %></span></p>
+    <p>閉鎖日 <span><%= @company.closure %></span></p>
   </div>
 
 
@@ -38,24 +38,50 @@
     <%= link_to '新現場', new_company_genba_path(@company), class: 'btn btn-primary mb-5'  %>
   </div>
 
-  <div class="row justify-content-around">
-    <% @company.genbas.each do |genba| %>
-    <div class="card text-center mb-5">
-      <div class="card-header">
-       現場名 <%= genba.name %>
-     </div>
-     <div class="card-body">
-      <p class="card-title"> <span>Contact: </span> <%= genba.contact %></p>
-      <p class="card-text">
+  <!-- <ul class="list-group m-2">
+   <% @company.genbas.each do |genba| %>
+   <li class="list-group-item">
+     <div class="d-flex justify-content-between align-items-center">
+
+      <p>
+        現場名 <%= genba.name %>
+      </p>
+      <p>
+        担当者 <%= genba.contact %>
+      </p>
+      <p>
         住所 <%= genba.address %>
       </p>
-      <p>閉鎖日 <%= genba.closure %></p>
+      <p>
+        電話 <%= genba.phone %>
+      </p>
+      <p>
+        閉鎖日 <%= genba.closure %>
+      </p>
+
     </div>
-    <div class="card-footer text-muted">
-      電話 <%= genba.phone %>
-    </div>
-  </div>
+  </li>
   <% end %>
+</ul> -->
+
+<div class="row justify-content-around">
+  <% @company.genbas.each do |genba| %>
+  <div class="card text-center mb-5">
+    <div class="card-header">
+     現場名 <%= genba.name %>
+   </div>
+   <div class="card-body">
+      電話 <%= genba.phone %>
+    <p class="card-text">
+      住所 <%= genba.address %>
+    </p>
+    <p>閉鎖日 <%= genba.closure %></p>
+  </div>
+  <div class="card-footer text-muted">
+    <p class="card-title"> <span>担当者 </span> <%= genba.contact %></p>
+  </div>
+</div>
+<% end %>
 </div>
 
 
