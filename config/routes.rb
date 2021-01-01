@@ -26,7 +26,8 @@ Rails.application.routes.draw do
   resources :puntos, only: [:edit, :update]
   resources :genbas, only: [:destroy]
   resources :pages, only: [:show]
-  resources :cars
-  resources :carpuntos
+  resources :cars do
+    resources :carpuntos
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

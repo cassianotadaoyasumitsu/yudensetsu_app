@@ -4,3 +4,32 @@
 <div class="d-flex flex-column align-items-center">
   <%= link_to '戻る', cars_path, class: ' btn btn-info btn-sm' %>
 </div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">user</th>
+      <th scope="col">date</th>
+      <th scope="col">start</th>
+      <th scope="col">end</th>
+      <th scope="col">oil</th>
+      <th scope="col">oiltime</th>
+      <th scope="col">fuel</th>
+      <th scope="col">fueltime</th>
+    </tr>
+  </thead>
+  <% @car.carpuntos.each do |carpunto| %>
+  <tbody>
+    <tr>
+      <th scope="row"><%= current_user.name %></th>
+      <td><%= carpunto.fueltime.strftime("%d/%m/%Y") %></td>
+      <td><%= carpunto.start %></td>
+      <td><%= carpunto.end %></td>
+      <td><%= carpunto.oil %></td>
+      <td><%= carpunto.oiltime %></td>
+      <td><%= carpunto.fuel %></td>
+      <td><%= carpunto.fueltime.strftime("%d/%m/%Y") %></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
