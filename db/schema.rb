@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_113404) do
+ActiveRecord::Schema.define(version: 2021_01_01_112147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,19 @@ ActiveRecord::Schema.define(version: 2020_12_02_113404) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "carpuntos", force: :cascade do |t|
+    t.string "start"
+    t.string "end"
+    t.boolean "oil"
+    t.datetime "oiltime"
+    t.boolean "fuel"
+    t.datetime "fueltime"
+    t.bigint "car_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["car_id"], name: "index_carpuntos_on_car_id"
   end
 
   create_table "cars", force: :cascade do |t|
@@ -145,6 +158,7 @@ ActiveRecord::Schema.define(version: 2020_12_02_113404) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "carpuntos", "cars"
   add_foreign_key "genbas", "companies"
   add_foreign_key "puntos", "genbas"
   add_foreign_key "puntos", "users"
