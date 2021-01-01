@@ -1,0 +1,2 @@
+class CarpuntosController < ApplicationController
+end

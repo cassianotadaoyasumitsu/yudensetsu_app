@@ -1,0 +1,2 @@
+class Carpunto < ApplicationRecord
+end
