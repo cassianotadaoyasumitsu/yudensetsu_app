@@ -22,8 +22,8 @@
         <th scope="row"><%= car.car_number %></th>
         <td><%= car.car_name %></td>
         <td><%= car.car_plate %></td>
-        <td><%= link_to 'Car Show', car_path(car) %></td>
-        <td><%= link_to 'Car Punto', new_car_carpunto_path(car) %></td>
+        <td><%= link_to '車レポート', car_path(car), class: 'btn btn-secondary btn-sm' %></td>
+        <td><%= link_to '車のカード', new_car_carpunto_path(car), class: 'btn btn-success btn-sm' %></td>
 
       </tr>
     </tbody>
