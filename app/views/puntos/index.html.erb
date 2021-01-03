@@ -9,11 +9,11 @@
       <tr>
         <th scope="col">id</th>
         <th scope="col">日付</th>
-        <th scope="col">シフト</th>
-        <th scope="col">現場</th>
         <th scope="col">企業</th>
-        <th scope="col">開始時期</th>
+        <th scope="col">現場名</th>
+        <th scope="col">出勤</th>
         <th scope="col">退勤</th>
+        <th scope="col">シフト</th>
         <th scope="col">残業</th>
         <th scope="col">注意</th>
         <th scope="col">編集</th>
@@ -24,9 +24,8 @@
       <tr>
         <th scope="row"><%= current_user.id %></th>
         <td><%= punto.date.strftime("%d/%m/%Y") %></td>
-        <td><%= punto.period %></td>
-        <td><%= punto.genba.name %></td>
         <td><%= punto.genba.company.name %></td>
+        <td><%= punto.genba.name %></td>
         <td><%= punto.in.strftime("%k:%M") %></td>
         <% unless punto.out.nil? %>
         <td><%= punto.out.strftime("%k:%M") %></td>
@@ -37,6 +36,7 @@
         <td><%= ((time_diff / 1.hour).round - 9) %></td>
         <% end %>
         <% end %>
+        <td><%= punto.period %></td>
         <td><%= punto.note %></td>
         <td><%= link_to '編集', edit_punto_path(punto), class: 'btn btn-secondary btn-sm' %></td>
       </tr>

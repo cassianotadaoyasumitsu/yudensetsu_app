@@ -8,19 +8,19 @@
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">driver</th>
-      <th scope="col">date</th>
-      <th scope="col">start</th>
-      <th scope="col">end</th>
-      <th scope="col">oil</th>
-      <th scope="col">fuel</th>
+      <th scope="col">運転者</th>
+      <th scope="col">日付</th>
+      <th scope="col">最初のKM</th>
+      <th scope="col">最後のKM</th>
+      <th scope="col">油</th>
+      <th scope="col">燃料</th>
     </tr>
   </thead>
   <% @car.carpuntos.each do |carpunto| %>
   <tbody>
     <tr>
       <th scope="row"><%= carpunto.driver %></th>
-      <td><%= %></td>
+      <td><%= carpunto.oiltime.strftime("%d/%m/%Y") %></td>
       <td><%= carpunto.start %></td>
       <td><%= carpunto.end %></td>
       <td><% if carpunto.oil %>
