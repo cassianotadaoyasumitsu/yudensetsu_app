@@ -1,12 +1,14 @@
 <%= simple_form_for [car, carpunto] do |f| %>
 <div class="forms">
-  <%= f.input :driver %>
-  <%= f.input :start %>
+  <% if carpunto.start %>
   <%= f.input :end %>
   <%= f.input :oil %>
-  <%= f.input :oiltime %>
   <%= f.input :fuel %>
-  <%= f.input :fueltime %>
   <%= f.submit carpunto.persisted? ? '編集' : '作成する', class: 'bnt btn-primary w-100' %>
+  <% else %>
+  <%= f.input :driver %>
+  <%= f.input :start %>
+  <%= f.submit carpunto.persisted? ? '編集' : '作成する', class: 'bnt btn-primary w-100' %>
+  <% end %>
 </div>
 <% end %>
