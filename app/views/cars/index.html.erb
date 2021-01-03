@@ -3,7 +3,9 @@
 </div>
 <div class="d-flex flex-column align-items-center">
   <%= link_to '戻る', root_path, class: 'btn btn-info btn-sm m-2' %>
+  <% if current_user.admin %>
   <%= link_to '車を作る', new_car_path, class: 'btn btn-primary btn-sm m-2' %>
+  <% end %>
 </div>
 
 <table class="table">
