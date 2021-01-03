@@ -11,6 +11,7 @@
   <%= link_to 'パスワードを変更する', edit_user_registration_path(current_user) %>
   <% else %>
   <%= link_to 'タイムカード', new_user_punto_path(current_user), class: 'btn btn-info w-50 mb-3' %>
+  <%= link_to '車', cars_path, class: 'btn btn-warning w-50 mb-3' %>
   <%= link_to '構成', edit_user_path(current_user), class: 'btn btn-secondary w-50 mb-3' %>
   <br>
   <%= link_to 'パスワードを変更する', edit_user_registration_path(current_user) %>
