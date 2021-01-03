@@ -29,6 +29,6 @@ class CarpuntosController < ApplicationController
   end
 
   def carpunto_params
-    params.require(:carpunto).permit(:start, :end, :oil, :oiltime, :fuel, :fueltime, :car_id)
+    params.require(:carpunto).permit(:driver, :start, :end, :oil, :oiltime, :fuel, :fueltime, :car_id)
   end
 end

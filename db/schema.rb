@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_01_01_112147) do
   end
 
   create_table "carpuntos", force: :cascade do |t|
+    t.string "driver"
     t.string "start"
     t.string "end"
     t.boolean "oil"

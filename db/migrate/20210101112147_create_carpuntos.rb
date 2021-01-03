@@ -1,6 +1,7 @@
 class CreateCarpuntos < ActiveRecord::Migration[6.0]
   def change
     create_table :carpuntos do |t|
+      t.string :driver, input_html: { autocomplete: 'current_user.name' }
       t.string :start
       t.string :end
       t.boolean :oil
