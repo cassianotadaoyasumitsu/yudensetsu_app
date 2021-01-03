@@ -1,4 +1,6 @@
 class CarsController < ApplicationController
+  before_action :find_car, only: [:show, :edit, :update, :destroy]
+
   def index
     @cars = Car.all
   end
@@ -14,7 +16,7 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     if @car.save
-      redirect_to car_path(@car)
+      redirect_to cars_path
     else
       render :new
     end
@@ -38,6 +40,10 @@ class CarsController < ApplicationController
   end
 
   private
+
+  def find_car
+    @car = Car.find(params[:id])
+  end
 
   def car_params
     params.require(:car).permit(

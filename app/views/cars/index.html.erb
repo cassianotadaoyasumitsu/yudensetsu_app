@@ -23,6 +23,9 @@
         <th scope="row"><%= car.car_number %></th>
         <td><%= car.car_name %></td>
         <td><%= car.car_plate %></td>
+        <td></td>
+        <td></td>
+        <td><%= link_to 'Car Punto', new_car_carpunto_path(car) %></td>
       </tr>
     </tbody>
     <% end %>

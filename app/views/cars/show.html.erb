@@ -2,5 +2,34 @@
   <%= image_tag "logo.png", class: "p-5" %>
 </div>
 <div class="d-flex flex-column align-items-center">
-  <%= link_to '戻る', cars_path, class: ' btn btn-info btn-sm' %>
+  <%= link_to '戻る', cars_path, class: ' btn btn-info btn-sm m-2' %>
 </div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">driver</th>
+      <th scope="col">date</th>
+      <th scope="col">start</th>
+      <th scope="col">end</th>
+      <th scope="col">oil</th>
+      <th scope="col">fuel</th>
+    </tr>
+  </thead>
+  <% @car.carpuntos.each do |carpunto| %>
+  <tbody>
+    <tr>
+      <th scope="row"><%= carpunto.driver %></th>
+      <td><%= carpunto.fueltime.strftime("%d/%m/%Y") %></td>
+      <td><%= carpunto.start %></td>
+      <td><%= carpunto.end %></td>
+      <td><% if carpunto.oil %>
+        🛢
+        <% end %> </td>
+        <td><% if carpunto.fuel %>
+          ⛽️
+          <% end %></td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
