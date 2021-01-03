@@ -12,8 +12,7 @@
         <th scope="col">番号</th>
         <th scope="col">車</th>
         <th scope="col">プレート</th>
-        <th scope="col">燃料</th>
-        <th scope="col">油</th>
+        <th scope="col">車レポート</th>
         <th scope="col">車のカード</th>
       </tr>
     </thead>
@@ -23,9 +22,9 @@
         <th scope="row"><%= car.car_number %></th>
         <td><%= car.car_name %></td>
         <td><%= car.car_plate %></td>
-        <td></td>
-        <td></td>
+        <td><%= link_to 'Car Show', car_path(car) %></td>
         <td><%= link_to 'Car Punto', new_car_carpunto_path(car) %></td>
+
       </tr>
     </tbody>
     <% end %>

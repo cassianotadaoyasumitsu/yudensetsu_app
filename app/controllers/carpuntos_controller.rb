@@ -2,16 +2,34 @@ class CarpuntosController < ApplicationController
   before_action :find_car, except: [:destroy]
 
   def new
-    @carpunto = Carpunto.new
+    if !@car.carpuntos.last || @car.carpuntos.last.end
+      @carpunto = Carpunto.new
+    else
+      @carpunto = @car.carpuntos.last
+    end
   end
 
   def create
     @carpunto = Carpunto.new(carpunto_params)
     @carpunto.car = @car
     if @carpunto.save
-      redirect_to car_path(@car)
+      redirect_to cars_path(@car)
     else
       render :new
+    end
+  end
+
+  def edit
+    @carpunto = Carpunto.find(params[:id])
+  end
+
+  def update
+    @carpunto = Carpunto.find(params[:id])
+    if @carpunto.start
+      @carpunto.update(carpunto_params)
+      redirect_to root_path
+    else
+      render :edit
     end
   end
 
