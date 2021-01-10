@@ -11,7 +11,7 @@
     <p><%= @user.furigana %> </p>
     <% if @user.photos.attached? %>
     <p>
-      <%= cl_image_tag @user.photos[0].key, height: 150, width: 100, crop: :fill %>
+      <%= cl_image_tag @user.photos[0].key, class: "avatar-large" %>
     </p>
     <% end %>
   </div>
