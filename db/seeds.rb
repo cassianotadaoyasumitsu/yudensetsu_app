@@ -28,6 +28,22 @@ params[:admin] = 'true'
 admin = User.new(params)
 admin.save
 
+params = {}
+params[:name] = 'Simone'
+params[:furigana] = 'シモネ'
+params[:address] = 'Yokohama'
+params[:pay_number] = '002'
+params[:phone] = '0000000000'
+params[:email] = 'simone@yudensetsu.app'
+params[:role] = '電気技師'
+params[:level_employee] = rand(1..5)
+params[:started_date] = '1980/12/01'
+params[:password] = 'yudensetsu01'
+params[:admin] = 'true'
+admin = User.new(params)
+admin.save
+
+
 puts 'Admin Created'
 
 # puts 'Creating Users'
